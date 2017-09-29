@@ -1,4 +1,34 @@
 footer.footer
   .g-wrapper
     .footer__content
+      .footer__grid
+        .footer__title Контакты
+        .footer__item
+          img.footer__svg(src="./images/phone.svg")
+          a(href="tel:+749999999").footer__contact +7 (499) 999-99-99
+        .footer__item
+          img.footer__svg(src="./images/mail.svg")
+          a(href="mailto:info@strogo-mtm.ru").footer__contact info@strogo-mtm.ru
+        .footer__item
+          img.footer__svg(src="./images/pin.svg")
+          .footer__contact г. Москва, ул. Гончарная, д. 21
+      .footer__grid
+        .handwritten.footer__handwritten Мы всегда рады принять Вас <br>в нашем уютном шоу-руме
+        form.feedback__form
+          .feedback__item
+            label.feedback__field * Ваше имя:
+            input.feedback__input
+          .feedback__item
+            label.feedback__field * Ваш телефон:
+            input.feedback__input
+          .button.feedback__submit Записаться
+    .footer__map
+      //img(src="./images/map.png").footer__card
+    .footer__conf
+      .footer__element
+        .footer__text Политика конфиденциальности
+      .footer__element
+        .footer__text.footer__text_bold Сайт разработан
+        img(src="./images/spacecode.svg").footer__spacecode
+
 

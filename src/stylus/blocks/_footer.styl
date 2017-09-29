@@ -1,4 +1,56 @@
 .footer
-  background: url('../images/bg-footer.png') no-repeat
-  background-size cover
-  padding 14rem 0 7rem 0
+  background: url('../images/bg-footer.png') center center/cover no-repeat
+  padding 0 0 5rem 0
+  &__content
+    display flex
+    justify-content space-between
+    align-items: flex-start
+    margin-bottom 12.2rem
+  &__grid
+    flex-basis 32%
+    padding-top 14rem
+    &:nth-child(2)
+      padding-top 10rem
+      align-self: flex-start
+  &__item
+    display flex
+    align-items: center
+    margin-bottom 4.6rem
+  &__title
+    font-size 4rem
+    font-family Intro
+    color white
+    margin-bottom 10rem
+  &__contact
+    font-size 1.8rem
+    color white
+    font-family Open Sans
+    font-weight: bold
+  &__svg
+    margin-right 2rem
+  &__handwritten
+    margin-bottom 4.4rem
+  &__map
+    height 62rem
+    margin-bottom 5.6rem
+    background: url(../images/map.png) center center/cover no-repeat
+    background-size: cover
+  &__card
+    width 100%
+    object-fit: cover
+  &__conf
+    display flex
+    justify-content: space-between
+    align-items: center
+  &__element
+    display: flex
+    flex-direction: column
+    align-items: flex-end
+  &__text
+    font-size 1.6rem
+    font-family: Open Sans
+    margin-bottom 1.6rem
+    color white
+    &_bold
+      font-weight: bold
+
