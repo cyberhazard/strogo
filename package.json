@@ -1,0 +1,20 @@
+{
+  "name": "strogo",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "CyberHazard",
+  "license": "MIT",
+  "scripts": {
+    "dev": "$(npm bin)/gulp & $(npm bin)/browser-sync start -s ./dest -f ./dest"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-pug": "^3.3.0",
+    "gulp-stylus": "^2.6.0",
+    "gulp-watch": "^4.3.11"
+  }
+}
