@@ -1,0 +1,34 @@
+.callback
+  text-align right
+  &__phone
+    font-family: 'Open Sans'
+    display block
+    font-weight: 700
+    color: white
+    font-size: 2rem
+    margin-bottom 1.2rem
+  &__call
+    display flex
+    justify-content: flex-end
+    align-items: flex-end
+    &:hover
+      & ^[0]__line
+        border-color: white
+      & ^[0]__button
+        color: white
+      & path
+        fill white
+  &__icon
+    padding-right 1rem
+  &__line
+    border-bottom 1px dashed #D19863
+    padding-bottom .6rem
+  &__button
+    position relative
+    font-family: 'Open Sans'
+    font-weight: 400
+    font-size: 1.4rem
+    color #D19863
+    background-color: transparent
+    border none
+    cursor pointer
