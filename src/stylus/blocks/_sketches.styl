@@ -1,0 +1,70 @@
+.sketches
+  padding-top 7rem
+  &__heading
+    display flex
+    justify-content: space-between
+  &__header
+    font-family: 'Intro'
+    font-size: 4rem
+    color black
+    align-self: center
+  &__handwritten
+    padding-top 5.6rem
+  &__blocks
+    display flex
+    height 45rem
+    width 100%
+    margin-top 3rem
+
+.sketch
+  width 45.7rem
+  height 39rem
+  flex-shrink: 0
+  margin-right 5rem
+  background-color white
+  box-shadow: 0 1rem 2.4rem rgba(0,0,0,0.08)
+  padding-top 5rem
+  transition .5s .2s
+  text-align center
+  cursor pointer
+  will-change: height
+  &__label
+    font-family: 'Open Sans'
+    font-size: 3rem
+    font-weight: 700
+    margin-top 2rem
+  &__more
+    display inline-block
+    margin-top 4rem
+    padding-bottom 0.5rem
+    border-bottom 1px dashed #C88B52
+    opacity 0
+    transition .5s
+    cursor pointer
+    & svg
+      transform: rotate(-90deg) translateX(.2rem)
+      width 1.15rem
+      & path
+        fill #C88B52
+  &__text
+    font-family: 'Open Sans'
+    font-size: 1.8rem
+    font-weight: 600
+    margin-left 0.3rem
+    color #C88B52
+  &:hover
+    height 45rem
+    transition: .5s
+    & ^[0]__sketch svg path
+      stroke #C88B52
+    & ^[0]__more
+      opacity 1
+      transition .5s .2s
+  &__sketch
+    & svg
+      height 17rem
+      & path
+        transition: .5s
+  &__shape svg
+    height 1.7rem
+    margin-top 3.8rem
