@@ -37,7 +37,7 @@ gulp.task('js', () => {
 })
 
 gulp.task('vendor', () => {
-  gulp.src('./src/vendor')
+  gulp.src('./src/vendor/**/*.*')
     .pipe(gulp.dest('./dest/vendor'))
 });
 
@@ -50,4 +50,4 @@ gulp.task('watch', () => {
   watch('./src/js/main.js', () => gulp.start('js'))
 })
 
-gulp.task('default', ['pug', 'stylus', 'fonts', 'images', 'js', 'watch']);
+gulp.task('default', ['pug', 'stylus', 'fonts', 'images', 'js', 'vendor', 'watch']);

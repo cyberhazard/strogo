@@ -1,0 +1,103 @@
+.care
+  position relative
+  z-index 1
+  padding-top 7rem
+  &__heading
+    display flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom 1.4rem
+  &__header
+    font-family: 'Intro'
+    font-size: 4rem
+    color: black
+    white-space nowrap
+  &__name
+    display inline-block
+    position relative
+    font-family: 'Intro'
+    font-size: 8rem
+    color #F3E5D8
+    &:after
+      content: ''
+      position absolute
+      top calc(100% + 4rem)
+      left 0
+      width 9.9rem
+      height 2.8rem
+      background: url('/images/shape-hand.svg') center center/cover no-repeat
+    &:before
+      content: ''
+      position absolute
+      top -7rem
+      width 38rem
+      height 28.8rem
+      background: url('/images/pluses.png') center center/cover no-repeat
+      z-index -1
+    &_left:before
+      right 100%
+      transform translateX(50%)
+    &_right:before
+      left 100%
+      transform translateX(-50%)
+  &__block
+    display flex
+    height 56.6rem
+    margin-bottom 8rem
+    &_right
+      & ^[0]__big
+        order: -1
+      & ^[0]__multi
+        padding-right 0
+        padding-left 2.4rem
+  &__multi
+    width 48.5rem
+    flex-grow: 0
+    flex-shrink: 0
+    padding-right 2.4rem
+  &__info
+    display flex
+    align-items: center
+    height 50%
+  &__slider
+    height 12.1rem
+  &__big
+    flex-grow: 1
+    background-size: cover
+  &__bottom
+    height 50%
+    padding-top 1.5rem
+  &__minislide
+    background-size: cover
+    transition .3s
+    cursor pointer
+    &:hover
+      opacity 0.5
+    .is-selected
+      opacity 0.8
+  &__controls
+    user-select none
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 6rem;
+  &__left
+    cursor pointer
+    margin-right 6rem
+    & svg
+      transform: rotate(90deg)
+      height:  2.2rem
+      & path
+        transition: .3s
+        fill #D2D2D2
+    &:hover path
+      fill black
+  &__right
+    cursor pointer
+    & svg
+      transform: rotate(-90deg)
+      height:  2.2rem
+      & path
+        transition: .3s
+        fill #D2D2D2
+    &:hover path
+      fill black
