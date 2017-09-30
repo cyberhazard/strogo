@@ -50,6 +50,13 @@ const createCareSlider = (selector) => (
     touchRatio: 0.2,
     nextButton: `${selector} .care__right`,
     prevButton: `${selector} .care__left`,
+    breakpoints: {
+      719: {
+        spaceBetween: 0,
+        slidesPerView: 1,
+        touchRatio: 1
+      }
+    }
   })
 );
 
@@ -60,10 +67,14 @@ createCareSlider('#insoles');
 createCareSlider('#sole');
 
 const careSliders = () => {
+  if (window.innerWidth < 720) return null
   const images = [...document.querySelectorAll('.care__minislide')];
+  if (!images) return null;
   images.forEach(image => image.onclick = (e) => {
     const src = e.target.style.backgroundImage.match(/\("([^"]*)/)[1];
-    e.target.closest('.care__block').querySelector('.care__big').style.backgroundImage = `url('${src}')`
+    e.target.closest('.care__block').querySelector('.care__big').style.backgroundImage = `url('${src}')`;
+    [...e.target.parentElement.children].forEach(el=>el.classList.remove('is-selected'))
+    e.target.classList.add('is-selected')
   })
 }
 careSliders()
