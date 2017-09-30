@@ -3,52 +3,18 @@
     .sketches__heading
       .sketches__handwritten.handwritten Мы тщательно прорабатываем <br /> эскиз для каждой модели
       .sketches__header Эскизы моделей
-  .sketches__blocks
-    .sketch
-      .sketch__sketch
-        include ../../images/sketch-1.svg
-      .sketch__shape
-        include ../../images/shape-hand.svg
-      .sketch__label Монки
-      .sketch__more
-        span.sketch__text Подробнее
-        include ../../images/angle.svg
-    .sketch
-      .sketch__sketch
-        include ../../images/sketch-2.svg
-      .sketch__shape
-        include ../../images/shape-hand.svg
-      .sketch__label Броги
-      .sketch__more
-        span.sketch__text Подробнее
-        include ../../images/angle.svg
-    .sketch
-      .sketch__sketch
-        include ../../images/sketch-3.svg
-      .sketch__shape
-        include ../../images/shape-hand.svg
-      .sketch__label Люферы
-      .sketch__more
-        span.sketch__text Подробнее
-        include ../../images/angle.svg
-    .sketch
-      .sketch__sketch
-        include ../../images/sketch-4.svg
-      .sketch__shape
-        include ../../images/shape-hand.svg
-      .sketch__label Хоулкатс
-      .sketch__more
-        span.sketch__text Подробнее
-        include ../../images/angle.svg
+  span.sketches__wrapper
+    .sketches__blocks
+      include ../data/_sketches.pug
   .sketches__controls
     .sketches__button.sketches__button_left
       .sketches__circle
         include ../../images/angle.svg
     .sketches__range
-      input.sketches__input(type="range" min="0" max="100" step="1" value="50")
       .sketches__line
         .sketches__button.sketches__button_mini
           .sketches__circle
+      input.sketches__input(type="range" min="0" max="100" step="1" value="0")
     .sketches__button.sketches__button_right
       .sketches__circle
         include ../../images/angle.svg

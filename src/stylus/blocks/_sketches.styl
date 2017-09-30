@@ -16,8 +16,12 @@
     width 100%
     margin-top 3rem
     margin-bottom 2rem
+    transition .2s
   &__controls
     margin-bottom 2rem
+    display flex
+    justify-content: center
+    align-items: center
   &__button
     display flex
     justify-content: center
@@ -27,24 +31,28 @@
     border-radius 50%
     background-color #F1E0D0
     box-shadow: 0 6px 14px rgba(0,0,0,.1)
-    transition .3s
+    transition box-shadow .3s
     cursor pointer
     &:hover
       box-shadow: none
     &_mini
       position absolute
       top -1.6rem
-      left 50%
+      left 0
       width 4.1rem
       height 4.1rem
     & svg
       height 38.5%
       & path
         fill white
-    &_left svg
-      transform: rotate(90deg) translateY(20%)
-    &_right svg
-      transform: rotate(-90deg) translateY(20%)
+    &_left
+      margin-right 3rem
+      & svg
+        transform: rotate(90deg) translateY(20%)
+    &_right
+      margin-left 6rem
+      & svg
+        transform: rotate(-90deg) translateY(20%)
   &__line
     position relative
     width 27rem
@@ -68,11 +76,19 @@
     width 73%
     border-radius 50%
     background-color #D19863
+  &__range
+    position relative
   &__input
+    position absolute
+    top -1rem
+    left 0
     width 30rem
-    height 4rem
+    height 3rem
     padding-left 1.3em
     padding-right 0.2em
+    z-index 2
+    opacity 0
+    cursor pointer
 
 .sketch
   width 45.7rem
@@ -126,3 +142,59 @@
   &__shape svg
     height 1.7rem
     margin-top 3.8rem
+
+@media (max-width: 1024px)
+  .sketches
+    &__blocks
+      height 36rem
+    &__header
+      font-size: 2.8rem
+    &__handwritten
+      padding-top 2rem
+  .sketch
+    height 31.9rem
+    width 37.2rem
+    &__sketch svg
+      height 13rem
+    &__shape svg
+      margin-top 2.5rem
+    &__more
+      margin-top 2.5rem
+    &__label
+      font-size: 2.4rem
+    &__text
+      font-size: 1.4rem
+    &:hover
+     height 36rem
+
+@media (max-width: 719px)
+  .sketches
+    &__blocks
+      height 27rem
+    &__heading
+      flex-direction: column
+      align-self: flex-end
+    &__header
+      font-size: 2rem
+      order -1
+    &__handwritten
+      margin-top 2rem
+    &__range
+      display none
+    &__wrapper
+      display: block;
+      max-width: 29rem;
+      margin: 0 auto;
+      overflow: hidden;
+  .sketch
+    width 100%
+    height 24.9rem
+    padding-top 2rem
+    &:hover
+      height 24.9rem
+      & ^[0]__more
+        display none
+    &__sketch svg
+      height 10.9rem
+    &__label
+      margin-top 1.4rem
