@@ -73,8 +73,8 @@
     cursor pointer
     &:hover
       opacity 0.5
-    .is-selected
-      opacity 0.8
+    &.is-selected
+      opacity 0.2
   &__controls
     user-select none
     display: flex;
@@ -101,3 +101,73 @@
         fill #D2D2D2
     &:hover path
       fill black
+
+@media (max-width: 1024px)
+  .care
+    padding-top 4rem
+    &__block
+      height 35.4rem
+      margin-bottom 6rem
+    &__multi
+      width 31rem
+    &__slider
+      height 7.5rem
+    &__info
+      height 44%
+    &__header
+      font-size: 2.8rem
+    &__name
+      font-size: 4rem
+      &:after
+        top calc(100% + 1rem)
+        width 6.1rem
+        height 1.7rem
+    &__left, &__right
+      & svg
+        height 1.6rem
+    &__left
+      margin-right 3.5rem
+
+@media (max-width: 719px)
+  .care
+    padding-top 2rem
+    &__block
+      margin-bottom 0
+      &:last-child
+        margin-bottom 3rem
+      &_right ^[0]__multi
+        padding-left 0
+    &__heading
+      flex-direction: column
+    &__header
+      font-size: 2rem
+      align-self: flex-end
+      order -1
+    &__handwritten
+      align-self: flex-start
+      padding-top 5rem
+    &__info
+      height 8rem
+    &__name
+      font-size: 3rem
+      &:before
+        display none
+    &__big
+      display none
+    &__slider
+      height 25.1rem
+    &__bottom
+      height: auto
+    &__multi
+      padding-left 0
+      padding-right 0
+      width 100%
+    &__minislide
+      &:hover
+        opacity 1
+    &__controls
+      transform: translateY(-28rem)
+      padding-top 0
+    &__left, &__right
+      & svg
+        height 1.5rem
