@@ -40,12 +40,15 @@
       .sketch__more
         span.sketch__text Подробнее
         include ../../images/angle.svg
-    .sketch
-    .sketch
-    .sketch
-    .sketch
-    .sketch
-    .sketch
-    .sketch
-    .sketch
-    .sketch
+  .sketches__controls
+    .sketches__button.sketches__button_left
+      .sketches__circle
+        include ../../images/angle.svg
+    .sketches__range
+      input.sketches__input(type="range" min="0" max="100" step="1" value="50")
+      .sketches__line
+        .sketches__button.sketches__button_mini
+          .sketches__circle
+    .sketches__button.sketches__button_right
+      .sketches__circle
+        include ../../images/angle.svg
