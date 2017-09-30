@@ -42,41 +42,22 @@ const sketchSlider = () => {
 window.onresize = sketchSlider
 sketchSlider();
 
-new Swiper('#embroidery .swiper-container', {
-  spaceBetween: 10,
-  slidesPerView: 3,
-  touchRatio: 0.2,
-  nextButton: '#embroidery .care__right',
-  prevButton: '#embroidery .care__left',
-});
-new Swiper('#logotype .swiper-container', {
-  spaceBetween: 10,
-  slidesPerView: 3,
-  touchRatio: 0.2,
-  nextButton: '#logotype .care__right',
-  prevButton: '#logotype .care__left',
-});
-new Swiper('#monogramma .swiper-container', {
-  spaceBetween: 10,
-  slidesPerView: 3,
-  touchRatio: 0.2,
-  nextButton: '#monogramma .care__right',
-  prevButton: '#monogramma .care__left',
-});
-new Swiper('#insoles .swiper-container', {
-  spaceBetween: 10,
-  slidesPerView: 3,
-  touchRatio: 0.2,
-  nextButton: '#insoles .care__right',
-  prevButton: '#insoles .care__left',
-});
-new Swiper('#sole .swiper-container', {
-  spaceBetween: 10,
-  slidesPerView: 3,
-  touchRatio: 0.2,
-  nextButton: '#sole .care__right',
-  prevButton: '#sole .care__left',
-});
+
+const createCareSlider = (selector) => (
+  new Swiper(`${selector} .swiper-container`, {
+    spaceBetween: 10,
+    slidesPerView: 3,
+    touchRatio: 0.2,
+    nextButton: `${selector} .care__right`,
+    prevButton: `${selector} .care__left`,
+  })
+);
+
+createCareSlider('#embroidery');
+createCareSlider('#logotype');
+createCareSlider('#monogramma');
+createCareSlider('#insoles');
+createCareSlider('#sole');
 
 const careSliders = () => {
   const images = [...document.querySelectorAll('.care__minislide')];
