@@ -1,0 +1,92 @@
+.costs
+  padding 0 0 10.2rem 0
+  &__top
+    display: flex
+    justify-content: space-between
+    margin-bottom 5rem
+  &__left
+    flex-basis 50%
+  &__right
+    flex-basis 40%
+  &__title
+    font-size: 4rem
+    font-family Intro
+    margin-top 8rem
+  &__handwritten
+    padding-top 5rem
+  &__image
+    box-shadow: 0 0.1rem 2.4rem RGBA(0,0,0,0.08)
+    margin-right 3rem
+  &__item
+    display flex
+    justify-content: flex-start
+    align-items: center
+    flex-basis 50%
+    margin-bottom 4rem
+  &__info
+    display flex
+    flex-direction: column
+    align-items: flex-start
+  &__name
+    font-size: 1.8rem
+    font-family: Open Sans
+    font-weight: 600
+    margin-bottom 2.4rem
+  &__price
+    font-size 1.6rem
+    font-family: Open Sans
+    & span
+      font-size 3rem
+      font-weight: 800
+  &__content
+    display flex
+    flex-wrap wrap
+  &__shape
+    margin-bottom 1.4rem
+    & svg
+      width 6rem
+
+@media (max-width: 1024px)
+  .costs
+    padding 0 0 6rem 0
+    &__title
+      font-size 2.8rem
+    &__left
+      flex-basis 60%
+    &__name
+      font-size 1.6rem
+    &__price
+      font-size 1.4rem
+      & span
+        font-size 2.4rem
+    &__item
+      flex-basis 100%
+    &__handwritten
+      padding-top 6rem
+@media (max-width: 719px)
+  .costs
+    &__top
+      flex-direction column
+      margin-bottom: 3.6rem;
+    &__title
+      font-size 2rem
+    &__right
+      align-self: flex-end
+    &__name
+      font-size 1.4rem
+      margin-bottom 0.4rem
+    &__item
+      margin-bottom 3.2rem
+    &__shape
+      margin-bottom 0
+      & svg
+        width 3rem
+    &__price
+      font-size 1.2rem
+      & span
+        font-size 1.8rem
+    &__handwritten
+      padding-top 4rem
+    &__image
+      width 9.6rem
+      margin-right: 1.6rem
