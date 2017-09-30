@@ -50,21 +50,20 @@
     display flex
     justify-content: flex-start
     align-items: center
+    position: relative
     margin-bottom 7.8rem
-    &_rev
-      justify-content: space-between
     &_left
       flex-basis 50%
       margin-right 9.4rem
     &_right
       flex-basis 34%
     &_leftrev
-      flex-basis 38%
+      flex-basis 42%
       align-self: center
       margin-right 0
-      text-align: right
     &_rightrev
       flex-basis 52%
+      margin-right 7rem
   &__img
     width 100%
     object-fit: cover
@@ -97,4 +96,44 @@
     justify-content: flex-start
   &__button
     margin-right 3.4rem
+    z-index 10
+  &__fplus
+    &:after
+      content: ''
+      position: absolute
+      right: -17rem;
+      top: -17rem;
+      background: url('../images/pluses.png')
+      width 34rem
+      height: 26.2rem
+  &__splus
+    &:after
+      content: ''
+      position: absolute
+      left: -18rem;
+      top: -0rem;
+      background: url('../images/pluses.png')
+      width 34rem
+      height: 26.2rem
+  &__tplus
+    &:after
+      content: ''
+      position: absolute
+      right: -17rem;
+      top: 11rem;
+      background: url('../images/pluses.png')
+      width 34rem
+      height: 26.2rem
+  &__frplus
+    &:after
+      content: ''
+      position: absolute
+      left: -18rem;
+      top: 20rem;
+      background: url('../images/pluses.png')
+      width 34rem
+      height: 26.2rem
 
+
+// @media (max-width: 1024px)
+//   .technology
