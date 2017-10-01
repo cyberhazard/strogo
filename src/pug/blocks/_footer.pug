@@ -17,10 +17,10 @@ footer.footer#contacts
         form.feedback__form
           .feedback__item
             label.feedback__field * Ваше имя:
-            input.feedback__input
+            input.feedback__input(type="text" required name="name")
           .feedback__item
             label.feedback__field * Ваш телефон:
-            input.feedback__input
+            input.feedback__input(type="tel" required name="phone")
           .button.feedback__submit Отправить
     .footer__map
       //img(src="./images/map.png").footer__card
