@@ -83,8 +83,8 @@
   flex-shrink: 0;
   margin-top: auto;
   margin-bottom: auto;
-  max-width: 400px;
-  border-radius: 4px;
+  max-width: 622px;
+  border-radius: 2px;
   opacity: 1;
   cursor: auto;
   background: url('../images/pop-bg.png') bottom right no-repeat;
@@ -244,7 +244,7 @@
     border: none;
     background-color: transparent;
     box-shadow: none;
-    color: #136fd6;
+    color: #d59b64;
     line-height: 55px;
   }
 

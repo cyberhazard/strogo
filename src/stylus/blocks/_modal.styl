@@ -1,0 +1,44 @@
+.modal
+  &__title
+    font-size 2.8rem
+    font-family Intro
+    color black
+    line-height 5.8rem
+    margin-bottom 1rem
+  &__photo
+    text-align: center
+    margin-bottom 2rem
+  &__previews
+    display flex
+    justify-content: center
+    align-items: center
+    margin-bottom 4rem
+    & img
+      &:first-child
+        margin-right 6rem
+  &__text
+    font-size 1.4rem
+    font-family: Open Sans
+    line-height 2.8rem
+    color black
+    margin-bottom 6rem
+  &__button
+    display inline-block
+  &__svg
+    width 8rem
+    height 2.2rem
+    margin-bottom 3rem
+
+
+@media (max-width: 719px)
+  .modal
+    &__photo
+      & img
+        width 100%
+    &__previews
+      flex-direction: column
+      & img
+        width 50%
+        &:first-child
+          margin-right 0rem
+
