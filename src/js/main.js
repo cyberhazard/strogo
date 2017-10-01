@@ -108,7 +108,7 @@ var modalWrap = () => {
           </div>`;
 };
 var popup = function(){
-  const PopUp = Array.prototype.slice.call(document.querySelectorAll('.sketch__text'));
+  const PopUp = Array.prototype.slice.call(document.querySelectorAll('.sketch'));
   if(!PopUp) return null;
   PopUp.forEach((el) => el.onclick = function(e){
     e.preventDefault();
