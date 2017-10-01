@@ -1,3 +1,4 @@
+// Слайдер с ползунком
 const sketchSlider = () => {
   const input = document.querySelector('.sketches__input');
   const circle = document.querySelector('.sketches__button_mini');
@@ -42,7 +43,7 @@ const sketchSlider = () => {
 window.onresize = sketchSlider
 sketchSlider();
 
-
+// Слайдеры в разделе "Внимание к деталям"
 const createCareSlider = (selector) => (
   new Swiper(`${selector} .swiper-container`, {
     spaceBetween: 10,
@@ -66,6 +67,7 @@ createCareSlider('#monogramma');
 createCareSlider('#insoles');
 createCareSlider('#sole');
 
+// Соответствие нажатой картинки с большой картинкой
 const careSliders = () => {
   if (window.innerWidth < 720) return null
   const images = [...document.querySelectorAll('.care__minislide')];
@@ -120,4 +122,5 @@ var popup = function(){
 }
 popup();
 
+// Плавный скролл
 new SmoothScroll('a[href*="#"]', { speed: 1500 })
