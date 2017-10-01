@@ -86,6 +86,7 @@ var modal = new tingle.modal({
   closeLabel: "Close",
   cssClass: ['custom-class-1', 'custom-class-2']
 });
+
 var modalWrap = () => {
   return`<div class="modal__wrap">
             <div class="modal__top">
@@ -107,6 +108,7 @@ var modalWrap = () => {
             <div class="button modal__button"> Заказать пошив </div>
           </div>`;
 };
+
 var popup = function(){
   const PopUp = Array.prototype.slice.call(document.querySelectorAll('.sketch'));
   if(!PopUp) return null;
@@ -118,3 +120,4 @@ var popup = function(){
 }
 popup();
 
+new SmoothScroll('a[href*="#"]', { speed: 1500 })
