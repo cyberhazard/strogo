@@ -135,4 +135,9 @@ const mobileMenu = () => {
   close.onclick = () => menu.style.bottom = '';
 
 }
-mobileMenu()
+mobileMenu();
+
+// Input Masks
+[...document.querySelectorAll('.feedback__input[name="phone"]')].forEach(el =>
+  new Inputmask("+7 (999) 999-99-99").mask(el)
+)
