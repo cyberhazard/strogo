@@ -124,3 +124,15 @@ popup();
 
 // Плавный скролл
 new SmoothScroll('a[href*="#"]', { speed: 1500 })
+
+const mobileMenu = () => {
+  const hamburger = document.querySelector('.header__hamburger svg');
+  const close = document.querySelector('.mob-menu__close');
+  const menu = document.querySelector('.mob-menu');
+  const items = [...document.querySelectorAll('.mob-menu__item')];
+  items.forEach(el => el.onclick = () => menu.style.bottom = '');
+  hamburger.onclick = () => menu.style.bottom = 0;
+  close.onclick = () => menu.style.bottom = '';
+
+}
+mobileMenu()

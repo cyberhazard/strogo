@@ -32,6 +32,12 @@
       transition .3s
     &:hover path
       fill #D19863
+  &__hamburger
+    display none
+    justify-content: center
+    & svg
+      height 2.6rem
+      cursor pointer
 
 .menu
   display flex
@@ -98,6 +104,8 @@
       padding-top 1rem
     &__logo svg
       height: 8.3rem
+    &__hamburger
+      display flex
     &__content
       padding-top 9rem
       padding-bottom 13.5rem
@@ -127,6 +135,15 @@
       padding-top 2rem
     &__logo svg
       height: 5.7rem
+    &__hamburger
+      & svg
+        height 2.3rem
+        position: fixed
+        top 4rem
+        right 1.5rem
+        z-index: 9
+        & rect
+          fill: #D19863
     &__content
       padding-top 7.7rem
       padding-bottom 10rem
