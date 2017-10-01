@@ -3,6 +3,7 @@ import pug from 'gulp-pug';
 import stylus from 'gulp-stylus'
 import babel from 'gulp-babel';
 import watch from 'gulp-watch';
+import autoprefixer from 'gulp-autoprefixer';
 
 gulp.task('pug', () => {
   gulp.src('./src/pug/**/!(_)*.pug')
@@ -17,6 +18,7 @@ gulp.task('stylus', () => {
     .pipe(stylus({
       'include css': true
     }))
+    .pipe(autoprefixer())
     .pipe(gulp.dest('./dest/css'))
 });
 
