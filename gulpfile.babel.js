@@ -4,6 +4,8 @@ import stylus from 'gulp-stylus'
 import babel from 'gulp-babel';
 import watch from 'gulp-watch';
 import autoprefixer from 'gulp-autoprefixer';
+import cleanCss from 'gulp-clean-css';
+import uglify from 'gulp-uglify'
 
 gulp.task('pug', () => {
   gulp.src('./src/pug/**/!(_)*.pug')
@@ -19,6 +21,7 @@ gulp.task('stylus', () => {
       'include css': true
     }))
     .pipe(autoprefixer())
+    .pipe(cleanCss())
     .pipe(gulp.dest('./dest/css'))
 });
 
@@ -35,6 +38,7 @@ gulp.task('images', () => {
 gulp.task('js', () => {
   gulp.src('./src/js/main.js')
     .pipe(babel())
+    .pipe(uglify())
     .pipe(gulp.dest('./dest/js'))
 })
 

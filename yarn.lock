@@ -885,6 +885,12 @@ chokidar@1.7.0, chokidar@^1.6.1:
   optionalDependencies:
     fsevents "^1.0.0"
 
+clean-css@4.1.9:
+  version "4.1.9"
+  resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-4.1.9.tgz#35cee8ae7687a49b98034f70de00c4edd3826301"
+  dependencies:
+    source-map "0.5.x"
+
 clean-css@^3.3.0:
   version "3.4.28"
   resolved "https://registry.yarnpkg.com/clean-css/-/clean-css-3.4.28.tgz#bf1945e82fc808f55695e6ddeaec01400efd03ff"
@@ -950,7 +956,7 @@ commander@2.8.x:
   dependencies:
     graceful-readlink ">= 1.0.0"
 
-commander@^2.11.0, commander@^2.2.0:
+commander@^2.11.0, commander@^2.2.0, commander@~2.11.0:
   version "2.11.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.11.0.tgz#157152fd1e7a6c8d98a5b715cf376df928004563"
 
@@ -1635,6 +1641,15 @@ gulp-babel@^7.0.0:
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
+gulp-clean-css@^3.9.0:
+  version "3.9.0"
+  resolved "https://registry.yarnpkg.com/gulp-clean-css/-/gulp-clean-css-3.9.0.tgz#e43e4c8d695060f6ba08a154d8e76d0d87b1c822"
+  dependencies:
+    clean-css "4.1.9"
+    gulp-util "3.0.8"
+    through2 "2.0.3"
+    vinyl-sourcemaps-apply "0.2.1"
+
 gulp-pug@^3.3.0:
   version "3.3.0"
   resolved "https://registry.yarnpkg.com/gulp-pug/-/gulp-pug-3.3.0.tgz#46982c1439c094c360542ed8ba5c882d3bb711cf"
@@ -1656,7 +1671,19 @@ gulp-stylus@^2.6.0:
     through2 "^2.0.0"
     vinyl-sourcemaps-apply "^0.2.0"
 
-gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.6, gulp-util@^3.0.7:
+gulp-uglify@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/gulp-uglify/-/gulp-uglify-3.0.0.tgz#0df0331d72a0d302e3e37e109485dddf33c6d1ca"
+  dependencies:
+    gulplog "^1.0.0"
+    has-gulplog "^0.1.0"
+    lodash "^4.13.1"
+    make-error-cause "^1.1.1"
+    through2 "^2.0.0"
+    uglify-js "^3.0.5"
+    vinyl-sourcemaps-apply "^0.2.0"
+
+gulp-util@3.0.8, gulp-util@^3.0.0, gulp-util@^3.0.2, gulp-util@^3.0.6, gulp-util@^3.0.7:
   version "3.0.8"
   resolved "https://registry.yarnpkg.com/gulp-util/-/gulp-util-3.0.8.tgz#0054e1e744502e27c04c187c3ecc505dd54bbb4f"
   dependencies:
@@ -2342,7 +2369,7 @@ lodash@^3.10.1:
   version "3.10.1"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-3.10.1.tgz#5bf45e8e49ba4189e17d482789dfd15bd140b7b6"
 
-lodash@^4.17.4:
+lodash@^4.13.1, lodash@^4.17.4:
   version "4.17.4"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.4.tgz#78203a4d1c328ae1d86dca6460e369b57f4055ae"
 
@@ -2363,6 +2390,16 @@ loose-envify@^1.0.0:
 lru-cache@2:
   version "2.7.3"
   resolved "https://registry.yarnpkg.com/lru-cache/-/lru-cache-2.7.3.tgz#6d4524e8b955f95d4f5b58851ce21dd72fb4e952"
+
+make-error-cause@^1.1.1:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/make-error-cause/-/make-error-cause-1.2.2.tgz#df0388fcd0b37816dff0a5fb8108939777dcbc9d"
+  dependencies:
+    make-error "^1.2.0"
+
+make-error@^1.2.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/make-error/-/make-error-1.3.0.tgz#52ad3a339ccf10ce62b4040b708fe707244b8b96"
 
 map-cache@^0.2.0:
   version "0.2.2"
@@ -3304,7 +3341,7 @@ source-map@0.4.x:
   dependencies:
     amdefine ">=0.0.4"
 
-source-map@^0.5.1, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
+source-map@0.5.x, source-map@^0.5.1, source-map@^0.5.6, source-map@^0.5.7, source-map@~0.5.1:
   version "0.5.7"
   resolved "https://registry.yarnpkg.com/source-map/-/source-map-0.5.7.tgz#8a039d2d1021d22d1ea14c80d8ea468ba2ef3fcc"
 
@@ -3456,19 +3493,19 @@ tfunk@^3.0.1:
     chalk "^1.1.1"
     object-path "^0.9.0"
 
+through2@2.0.3, through2@^2.0.0:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
+  dependencies:
+    readable-stream "^2.1.5"
+    xtend "~4.0.1"
+
 through2@^0.6.1:
   version "0.6.5"
   resolved "https://registry.yarnpkg.com/through2/-/through2-0.6.5.tgz#41ab9c67b29d57209071410e1d7a7a968cd3ad48"
   dependencies:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
-
-through2@^2.0.0:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/through2/-/through2-2.0.3.tgz#0004569b37c7c74ba39c43f3ced78d1ad94140be"
-  dependencies:
-    readable-stream "^2.1.5"
-    xtend "~4.0.1"
 
 tildify@^1.0.0:
   version "1.2.0"
@@ -3524,6 +3561,13 @@ uglify-js@^2.6.1, uglify-js@^2.7.0:
     yargs "~3.10.0"
   optionalDependencies:
     uglify-to-browserify "~1.0.0"
+
+uglify-js@^3.0.5:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/uglify-js/-/uglify-js-3.1.3.tgz#d61f0453b4718cab01581f3162aa90bab7520b42"
+  dependencies:
+    commander "~2.11.0"
+    source-map "~0.5.1"
 
 uglify-to-browserify@~1.0.0:
   version "1.0.2"
@@ -3618,7 +3662,7 @@ vinyl-fs@^0.3.0:
     through2 "^0.6.1"
     vinyl "^0.4.0"
 
-vinyl-sourcemaps-apply@^0.2.0:
+vinyl-sourcemaps-apply@0.2.1, vinyl-sourcemaps-apply@^0.2.0:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/vinyl-sourcemaps-apply/-/vinyl-sourcemaps-apply-0.2.1.tgz#ab6549d61d172c2b1b87be5c508d239c8ef87705"
   dependencies:
