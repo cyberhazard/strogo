@@ -28,78 +28,23 @@
       .jobs__group Whole сut
       .jobs__group Другое
     .jobs__blocks
-      .jobs__block.jobs__block_left
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
-      .jobs__block.jobs__block_right
-        img.jobs__image(src="/images/shoe.png")
-        .jobs__shape
-          include ../../images/shape-hand.svg
-        .jobs__label Brogi Brown Leather
-        .jobs__price 15 000 <span>руб.</span>
+      mixin jobs(name, price, img, category, type)
+        .jobs__block(class=!type? '' : type=='left'? 'jobs__block_left' : 'jobs__block_right' data-category=category)
+          img.jobs__image(src=img)
+          .jobs__shape
+            include ../../images/shape-hand.svg
+          .jobs__label= name
+          .jobs__price!= `${price} <span>руб.</span>`
+
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , 'left')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , 'right')
     .jobs__footer
       .button.jobs__button Показать еще
 
