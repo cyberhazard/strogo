@@ -123,6 +123,53 @@ var popup = function(){
 }
 popup();
 
+// callback popup
+
+var callBackWrap = () => {
+  return`<div class="call">
+            <div class="g-wrapper">
+              <div class="call__content">
+                <div class="call__title"> Заказать звонок</div>
+                <form class="call__form">
+                  <div class="call__item">
+                    <label class="call__field"> * Ваше имя:</label>
+                    <input class="call__input" type="text" required name="name" placeholder="Например, Антон" />
+                  </div>
+                  <div class="call__item">
+                    <label class="call__field"> * Ваш телефон:</label>
+                    <input class="call__input" type="tel" required name="phone" placeholder="+7 (999) 999-99-99" />
+                  </div>
+                  <button class="button call__submit"> Записаться </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        `
+};
+
+var callBack = function(){
+  const callBackButton = Array.prototype.slice.call(document.querySelectorAll('.callback__button'));
+  const sewingButton = Array.prototype.slice.call(document.querySelectorAll('.sewing'));
+  if(!callBackButton || !sewingButton) return null;
+  sewingButton.forEach((el) => el.onclick = function(e){
+    e.preventDefault();
+    modal.setContent(callBackWrap());
+    document.querySelector('.tingle-modal-box').style.background="none";
+    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, 0.9);";
+    document.querySelector('.call__title').innerHTML = 'Заказать пошив'
+    modal.open();
+  })
+  callBackButton.forEach((el) => el.onclick = function(e){
+    e.preventDefault();
+    modal.setContent(callBackWrap());
+    document.querySelector('.tingle-modal-box').style.background="none";
+    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, 0.9);";
+    modal.open();
+  })
+}
+callBack();
+
+
 // Плавный скролл
 new SmoothScroll('a[href*="#"]', { speed: 1500 })
 
@@ -139,6 +186,6 @@ const mobileMenu = () => {
 mobileMenu();
 
 // Input Masks
-[...document.querySelectorAll('.feedback__input[name="phone"]')].forEach(el =>
+[...document.querySelectorAll('.callback__input[name="phone"]')].forEach(el =>
   new Inputmask("+7 (999) 999-99-99").mask(el)
 )
