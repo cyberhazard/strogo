@@ -7,7 +7,8 @@ const sketchSlider = (block) => {
   const right = document.querySelector(block + ' .sketches__button.sketches__button_right');
   const margin = parseInt(getComputedStyle(wrapper.children[0]).marginRight);
   const offset = wrapper.children[0].clientWidth + margin;
-  const width = wrapper.scrollWidth - offset;
+  const width = wrapper.scrollWidth - offset * Math.floor(window.innerWidth / offset);
+  console.log(offset)
   let currentOffset = 0;
 
   input.onmouseenter = () => circle.style.boxShadow = 'none';
@@ -39,10 +40,12 @@ const sketchSlider = (block) => {
   }
 }
 
+
 window.onresize = () => {
   sketchSlider('#sketches');
+  sketchSlider('#top-slider');
 }
-sketchSlider('#sketches');
+['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
 
 // Слайдеры в разделе "Внимание к деталям"
 const createCareSlider = (selector) => (
