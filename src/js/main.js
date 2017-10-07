@@ -47,8 +47,7 @@ window.onresize = () => {
 }
 ['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
 
-//
-
+// Top slider click to view
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), {
   thumbnail: false
 })
