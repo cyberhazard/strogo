@@ -2,7 +2,7 @@
   span.sketches__wrapper
     .sketches__blocks
       - for(let i = 1 ; i < 12 ; i++)
-        .sketches__top-slider
+        a.sketches__top-slider(href=`/images/top-slider/${i}.jpg`)
           img(src=`/images/top-slider/${i}.jpg`)
   .sketches__controls
     .sketches__button.sketches__button_left

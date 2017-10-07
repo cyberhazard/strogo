@@ -47,6 +47,12 @@ window.onresize = () => {
 }
 ['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
 
+//
+
+new lightGallery(document.querySelector('#top-slider .sketches__blocks'), {
+  thumbnail: false
+})
+
 // Слайдеры в разделе "Внимание к деталям"
 const createCareSlider = (selector) => (
   new Swiper(`${selector} .swiper-container`, {
