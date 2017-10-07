@@ -82,48 +82,15 @@ const careSliders = () => {
 }
 careSliders()
 
-// popups
+
+
+// callback popup
 var modal = new tingle.modal({
   stickyFooter: false,
   closeMethods: ['overlay', 'button', 'escape'],
   closeLabel: "Close",
   cssClass: ['custom-class-1', 'custom-class-2']
 });
-
-var modalWrap = () => {
-  return`<div class="modal__wrap">
-            <div class="modal__top">
-              <div class="modal__title"> Броги </div>
-              <img src="../images/shape-hand.svg" class="modal__svg"/>
-            </div>
-            <div class="modal__photo">
-              <img src="../images/brogi.png" />
-            </div>
-            <div class="modal__previews">
-              <img src="../images/mini-brogi.png"/>
-              <img src="../images/mini-brogi.png"/>
-            </div>
-            <div class="modal__text">
-              Броги - это не отдельный фасон обуви, а способ ее декорирования. Брогирование - нанесение перфорации на те же оксфорды, дерби и даже лоуферы.
-              <br><br>
-              Полностью декорированные тяжелые броги сильно нагружены визуально, и носить их со строгими костюмами не вполне уместно. Лучше всего такая обувь смотрится с тканями вроде твида, вельвета, клетчатыми спортивными пиджаками, блейзерами. Не стоит носить броги со слишком узкими брюками, в таком случае нога будет смотреться огромной, а еще лучше если на брюках будут отвороты, а еще лучше просто оденьте джинсы
-            </div>
-            <div class="button modal__button"> Заказать пошив </div>
-          </div>`;
-};
-
-var popup = function(){
-  const PopUp = Array.prototype.slice.call(document.querySelectorAll('.sketch'));
-  if(!PopUp) return null;
-  PopUp.forEach((el) => el.onclick = function(e){
-    e.preventDefault();
-    modal.setContent(modalWrap());
-    modal.open();
-  })
-}
-popup();
-
-// callback popup
 
 var callBackWrap = () => {
   return`<div class="call">
@@ -154,20 +121,67 @@ var callBack = function(){
   sewingButton.forEach((el) => el.onclick = function(e){
     e.preventDefault();
     modal.setContent(callBackWrap());
+    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
     document.querySelector('.tingle-modal-box').style.background="none";
-    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, 0.9);";
     document.querySelector('.call__title').innerHTML = 'Заказать пошив'
     modal.open();
   })
   callBackButton.forEach((el) => el.onclick = function(e){
     e.preventDefault();
     modal.setContent(callBackWrap());
+    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
     document.querySelector('.tingle-modal-box').style.background="none";
-    document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, 0.9);";
     modal.open();
   })
 }
 callBack();
+
+
+// popups
+
+
+var modalWrap = () => {
+  return`<div class="modal__wrap">
+            <div class="modal__top">
+              <div class="modal__title"> Броги </div>
+              <img src="../images/shape-hand.svg" class="modal__svg"/>
+            </div>
+            <div class="modal__photo">
+              <img src="../images/brogi.png" />
+            </div>
+            <div class="modal__previews">
+              <img src="../images/mini-brogi.png"/>
+              <img src="../images/mini-brogi.png"/>
+            </div>
+            <div class="modal__text">
+              Броги - это не отдельный фасон обуви, а способ ее декорирования. Брогирование - нанесение перфорации на те же оксфорды, дерби и даже лоуферы.
+              <br><br>
+              Полностью декорированные тяжелые броги сильно нагружены визуально, и носить их со строгими костюмами не вполне уместно. Лучше всего такая обувь смотрится с тканями вроде твида, вельвета, клетчатыми спортивными пиджаками, блейзерами. Не стоит носить броги со слишком узкими брюками, в таком случае нога будет смотреться огромной, а еще лучше если на брюках будут отвороты, а еще лучше просто оденьте джинсы
+            </div>
+            <div class="button modal__button sewing"> Заказать пошив </div>
+          </div>`;
+};
+
+var popup = function(){
+  const PopUp = Array.prototype.slice.call(document.querySelectorAll('.sketch'));
+  if(!PopUp) return null;
+  PopUp.forEach((el) => el.onclick = function(e){
+    e.preventDefault();
+    modal.setContent(modalWrap());
+    document.querySelector('.tingle-modal-box').style.background="white";
+    modal.open();
+    const sewingButton = document.querySelector('.sewing');
+    sewingButton.onclick = function(e){
+      e.preventDefault();
+      modal.setContent(callBackWrap());
+      document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
+      document.querySelector('.tingle-modal-box').style.background="none";
+      document.querySelector('.call__title').innerHTML = 'Заказать пошив'
+      modal.open();
+    }
+  })
+}
+popup();
 
 
 // Плавный скролл
