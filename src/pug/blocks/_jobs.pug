@@ -38,7 +38,7 @@
           .jobs__shape
             include ../../images/shape-hand.svg
           .jobs__label= name
-          .jobs__price!= `${price} <span>руб.</span>`
+          .jobs__price!= `${price} ${price && '<span>руб.</span>'}`
 
       +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs 4', 'all' , 'left')
       +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , '')
