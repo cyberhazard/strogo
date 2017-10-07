@@ -1,10 +1,10 @@
 // Слайдер с ползунком
-const sketchSlider = () => {
-  const input = document.querySelector('.sketches__input');
-  const circle = document.querySelector('.sketches__button_mini');
-  const wrapper = document.querySelector('.sketches__blocks');
-  const left = document.querySelector('.sketches__button.sketches__button_left');
-  const right = document.querySelector('.sketches__button.sketches__button_right');
+const sketchSlider = (block) => {
+  const input = document.querySelector(block + ' .sketches__input');
+  const circle = document.querySelector(block + ' .sketches__button_mini');
+  const wrapper = document.querySelector(block + ' .sketches__blocks');
+  const left = document.querySelector(block + ' .sketches__button.sketches__button_left');
+  const right = document.querySelector(block + ' .sketches__button.sketches__button_right');
   const margin = parseInt(getComputedStyle(wrapper.children[0]).marginRight);
   const offset = wrapper.children[0].clientWidth + margin;
   const width = wrapper.scrollWidth - offset;
@@ -39,9 +39,10 @@ const sketchSlider = () => {
   }
 }
 
-
-window.onresize = sketchSlider
-sketchSlider();
+window.onresize = () => {
+  sketchSlider('#sketches');
+}
+sketchSlider('#sketches');
 
 // Слайдеры в разделе "Внимание к деталям"
 const createCareSlider = (selector) => (
