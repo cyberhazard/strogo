@@ -30,21 +30,25 @@
     .jobs__blocks
       mixin jobs(name, price, img, category, type)
         .jobs__block(class=!type? '' : type=='left'? 'jobs__block_left' : 'jobs__block_right' data-category=category)
-          img.jobs__image(src=img)
+          .jobs__image.lg
+            - let [folder, qty] = img.split(' ')
+            - for(let i = 1 ; i < +qty+1 ; i++)
+              a(href=`${folder}/${i}.jpg` style=i>=2? 'display:none;': '')
+                img(src=`${folder}/${i}.jpg` style="width: 100%")
           .jobs__shape
             include ../../images/shape-hand.svg
           .jobs__label= name
           .jobs__price!= `${price} <span>руб.</span>`
 
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , 'left')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/shoe.png', 'all' , 'right')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs 4', 'all' , 'left')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs 4', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs 4', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , 'right')
     .jobs__footer
       .button.jobs__button Показать еще
 

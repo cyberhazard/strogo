@@ -48,9 +48,9 @@ window.onresize = () => {
 ['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
 
 // Top slider click to view
-new lightGallery(document.querySelector('#top-slider .sketches__blocks'), {
-  thumbnail: false
-})
+new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
+
+[...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true }));
 
 // Слайдеры в разделе "Внимание к деталям"
 const createCareSlider = (selector) => (
