@@ -8,7 +8,6 @@ const sketchSlider = (block) => {
   const margin = parseInt(getComputedStyle(wrapper.children[0]).marginRight);
   const offset = wrapper.children[0].clientWidth + margin;
   const width = wrapper.scrollWidth - offset * Math.floor(window.innerWidth / offset);
-  console.log(offset)
   let currentOffset = 0;
 
   input.onmouseenter = () => circle.style.boxShadow = 'none';
@@ -211,3 +210,10 @@ mobileMenu();
 [...document.querySelectorAll('.callback__input[name="phone"]')].forEach(el =>
   new Inputmask("+7 (999) 999-99-99").mask(el)
 )
+
+// scrollTop button
+
+window.onscroll = () => {
+  const topButton = document.querySelector('.to-top')
+  topButton.style.opacity = window.pageYOffset > 1000? 1 : ''
+}

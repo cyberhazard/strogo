@@ -42,6 +42,17 @@ html
   transform-origin: left bottom
   transform: rotate(-11deg)
 
+.to-top
+  position fixed
+  right 0
+  bottom 0
+  z-index: 1000
+  width 100px
+  opacity 0
+  transition .5s
+  & img
+    width 100%
+
 @media (max-width: 1024px)
   .g-wrapper
     max-width: 72rem
