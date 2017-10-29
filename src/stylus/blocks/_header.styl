@@ -11,6 +11,9 @@
   &__content
     padding-top 10.8rem
     padding-bottom 14rem
+    display flex
+    align-items flex-start
+    justify-content space-between
   &__heading
     font-family: 'Intro'
     font-size: 4.2rem
@@ -40,7 +43,76 @@
     & svg
       height 2.6rem
       cursor pointer
+  &__title
+    color: #ffffff;
+    font-family: Intro;
+    font-size: 3.6rem;
+    font-weight: 400;
+    line-height: 5.2rem;
+    margin-bottom 2rem
+  &__buttons
+    display flex
+    justify-content flex-start
+    align-items center
+  &__but
+    padding 2rem 4rem
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 1.6rem;
+    font-weight: 700;
+    box-shadow: 1.4rem 1.4rem 2rem rgba(0, 0, 0, 0.15);
+    background-color: #bb5e36;
+    border: 0.2rem solid transparent;
+    margin-right 1rem
+    cursor pointer
+    transition 0.3s
+    &:hover
+      background-color: #c88b52;
+    &_border
+      background none
+      box-shadow: 1.4rem 1.4rem 2rem rgba(0, 0, 0, 0.15);
+      border: 0.2rem solid #bb5e36;
+      margin-right 0
+      &:hover
+        background-color: #c88b52;
+  &__info
+    color: #ffffff;
+    font-family: "Open Sans";
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 2.2rem;
+    margin-bottom 3rem
+    &:last-child
+      margin-bottom 0
+  &__right
+    padding-left 3.4rem
+    border-left 0.8rem solid #bb5e36;
+    flex-basis 48%
+  &__left
+    flex-basis 46%
 
+.header-swiper .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+.header__slider > .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+}
 .menu
   display flex
   justify-content: center

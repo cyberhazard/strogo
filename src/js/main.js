@@ -51,6 +51,16 @@ window.onresize = () => {
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true }));
+// Слайдеры в хедере
+var swiper = new Swiper('.header-swiper .swiper-container', {
+  slidesPerView: 4,
+  spaceBetween: 100,
+  centeredSlides: true,
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+});
 
 // Слайдеры в разделе "Внимание к деталям"
 const createCareSlider = (selector) => (
@@ -69,7 +79,7 @@ const createCareSlider = (selector) => (
     }
   })
 );
-
+createCareSlider('#embroidery');
 createCareSlider('#embroidery');
 createCareSlider('#logotype');
 createCareSlider('#monogramma');
