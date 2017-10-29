@@ -1,0 +1,49 @@
+.table
+  background-color: #fbfbfb;
+  &__content
+    padding-top 5rem
+    padding-bottom 8rem
+    position relative
+    &:after
+      content ''
+      position: absolute;
+      left: -10rem;
+      bottom: 0;
+      background: url(../images/pluses.png);
+      width: 34rem;
+      height: 26.2rem;
+  &__costs
+    width 100%
+    border-collapse: collapse;
+    color black
+    position: relative
+    z-index 2
+  &__th
+    background-color: #bb5e36;
+    padding 2.4rem 0 1.8rem 5.2rem
+    text-align: left
+    color: #ffffff;
+    font-family: Intro;
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 2.2rem;
+    &_dark
+      background-color: #a4431a;
+  &__td
+    color: #121212;
+    font-family: "Open Sans";
+    font-size: 1.7rem;
+    font-weight: 700;
+    padding 2rem 0 1.8rem 5.2rem
+    &_cost
+      font-weight: 400;
+  &__tr
+    &:nth-child(odd)
+      background: #F5F5F5
+    &:nth-child(even)
+      background: rgba(234, 234, 234,0.7)
+
+.table .costs__title
+  padding-top 10rem
+
+
