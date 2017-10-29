@@ -42,9 +42,10 @@ const sketchSlider = (block) => {
 
 window.onresize = () => {
   sketchSlider('#sketches');
-  sketchSlider('#top-slider');
+  //sketchSlider('#top-slider');
 }
-['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
+//['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
+['#sketches'].forEach(id => sketchSlider(id))
 
 // Top slider click to view
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
