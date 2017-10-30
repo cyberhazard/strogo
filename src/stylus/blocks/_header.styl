@@ -66,15 +66,11 @@
     margin-right 1rem
     cursor pointer
     transition 0.3s
-    &:hover
-      background-color: #c88b52;
     &_border
       background none
       box-shadow: 1.4rem 1.4rem 2rem rgba(0, 0, 0, 0.15);
       border: 0.2rem solid #bb5e36;
       margin-right 0
-      &:hover
-        background-color: #c88b52;
   &__info
     color: #ffffff;
     font-family: "Open Sans";
@@ -236,5 +232,27 @@
       transform: translateY(.5rem);
       & svg
         height 2.3rem
+    &__title
+      font-size: 2.2rem;
+      line-height: 3.6rem;
+      margin-bottom 3rem
+    &__content
+      display block
+      padding-bottom 4rem
+    &__buttons
+      display block
+      margin-bottom 4rem
+    &__but
+      padding 1.6rem 2.4rem
+      font-size: 1.3rem;
+      width 20rem
+      text-align center
+      margin-bottom 1rem
+    &__slider
+      display none
+    &__info
+      font-size 1.2rem
+      line-height: 2rem;
+      margin-bottom 2.8rem
   .callback
     display none
