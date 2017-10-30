@@ -52,13 +52,16 @@ new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thum
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true }));
 // Слайдеры в хедере
-var swiper = new Swiper('.header-swiper .swiper-container', {
-  slidesPerView: 4,
-  spaceBetween: 100,
+var swiper = new Swiper('#header-swiper', {
+  slidesPerView: 5,
+  spaceBetween: 20,
   centeredSlides: true,
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
+  initialSlide: 4,
+  nextButton: '.header__pag_right',
+  prevButton: '.header__pag_left',
+  navigation: {
+    nextEl: '.header__pag_right',
+    prevEl: '.header__pag_left',
   },
 });
 
