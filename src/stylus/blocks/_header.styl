@@ -84,31 +84,11 @@
     padding-left 3.4rem
     border-left 0.8rem solid #bb5e36;
     flex-basis 48%
+    &_mobile
+      display none
   &__left
     flex-basis 46%
 
-.header-swiper .swiper-container {
-      width: 100%;
-      height: 100%;
-    }
-.header__slider > .swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  /* Center slide text vertically */
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  -webkit-align-items: center;
-  align-items: center;
-}
 .menu
   display flex
   justify-content: center
@@ -192,6 +172,9 @@
       display: inline-block;
       & svg
         height 4.6rem
+    &__right
+      &_mobile
+        display none
   .callback
     &__phone
       font-size 2rem
@@ -254,5 +237,27 @@
       font-size 1.2rem
       line-height: 2rem;
       margin-bottom 2.8rem
+      color black
+      &_wrap
+        position relative
+        padding-left 2.4rem
+        &:before
+          content ''
+          position absolute
+          left 6px
+          top 0
+          width 4px
+          height 100%
+          background-color #bb5e36;
+    &__right
+      display none
+      border 0
+      &_mobile
+        display block
+        padding-top 4rem
+        padding-bottom 4rem
+        padding-left 0
+
+
   .callback
     display none
