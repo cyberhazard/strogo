@@ -58,12 +58,43 @@
       font-weight: bold
   &__menu
     margin-bottom 4rem
-
+  &__personal
+    width 40rem
+    display flex
+    align-items center
+    justify-content: center
+    font-size: 1rem;
+    color: #d8d8d8;
+    font-family: Open Sans;
+    margin-bottom: 2rem;
+    text-align: left;
+    & a
+      color #d59b64
+      cursor pointer
+    & p
+      font-size 1.4rem
 .map-wrapper
   max-width: 120rem
   margin 0 auto
   padding-left 0.6rem
   padding-right 0.6rem
+.confirm__label
+  width 16px
+  height: 16px
+  display: block
+  position: relative
+  margin-right 1rem
+.confirm__label input[type="checkbox"] + span
+  position absolute
+  left: -1px;
+  top: -7px;
+  width: 20px;
+  height: 20px;
+  cursor pointer
+  border-radius: 4px
+.confirm__label input[type="checkbox"]:checked + span
+  background url('../images/confirm.png') center center/cover no-repeat
+  background-size: cover
 
 // MEDIA
 
@@ -72,6 +103,8 @@
     &__title
       font-size: 2.8rem
       margin-bottom 4.6rem
+    &__personal
+      width 34rem
     &__grid
       flex-basis 46%
       padding-top 10rem
@@ -98,6 +131,10 @@
     &__title
       font-size: 2rem
       margin-bottom 3.4rem
+    &__personal
+      width 100%
+      p
+        font-size 1.2rem
     &__grid
       flex-basis 100%
       padding-top 6rem
