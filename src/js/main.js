@@ -56,6 +56,9 @@ var swiper = new Swiper('#header-swiper', {
   slidesPerView: 5,
   spaceBetween: 20,
   centeredSlides: true,
+  // autoplay:{
+  //   delay:5000,
+  // },
   initialSlide: 4,
   nextButton: '.header__pag_right',
   prevButton: '.header__pag_left',
