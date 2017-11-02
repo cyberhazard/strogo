@@ -52,6 +52,7 @@ new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thum
 // Внимание к деталям лайт галлери
 new lightGallery(document.querySelector('.works__images'), { thumbnail: false });
 new lightGallery(document.querySelector('.footer__images'), { thumbnail: false });
+new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: false });
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true }));
 // Слайдеры в хедере
