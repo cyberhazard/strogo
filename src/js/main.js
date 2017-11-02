@@ -51,6 +51,7 @@ window.onresize = () => {
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
 // Внимание к деталям лайт галлери
 new lightGallery(document.querySelector('.works__images'), { thumbnail: false });
+new lightGallery(document.querySelector('.footer__images'), { thumbnail: false });
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true }));
 // Слайдеры в хедере
@@ -58,9 +59,9 @@ var swiper = new Swiper('#header-swiper', {
   slidesPerView: 5,
   spaceBetween: 20,
   centeredSlides: true,
-  // autoplay:{
-  //   delay:5000,
-  // },
+  autoplay:{
+    delay:2000,
+  },
   initialSlide: 4,
   nextButton: '.header__pag_right',
   prevButton: '.header__pag_left',
@@ -115,6 +116,11 @@ var modal = new tingle.modal({
   stickyFooter: false,
   closeMethods: ['overlay', 'button', 'escape'],
   closeLabel: "Close",
+  onOpen: function(){
+    [...document.querySelectorAll('input[type="tel"]')].forEach(el =>
+      new Inputmask("+7 (999) 999-99-99").mask(el)
+    )
+  },
   cssClass: ['custom-class-1', 'custom-class-2']
 });
 
@@ -209,9 +215,7 @@ var openFooterPolitics = function(){
     showPolitics();
   }
   )
-  // button.onclick = function(){
-  //   showPolitics();
-  // }
+
 }
 openFooterPolitics();
 // popups
@@ -278,12 +282,11 @@ const mobileMenu = () => {
   items.forEach(el => el.onclick = () => menu.style.bottom = '');
   hamburger.onclick = () => menu.style.bottom = 0;
   close.onclick = () => menu.style.bottom = '';
-
 }
 mobileMenu();
 
 // Input Masks
-[...document.querySelectorAll('.callback__input[name="phone"]')].forEach(el =>
+[...document.querySelectorAll('input[type="tel"]')].forEach(el =>
   new Inputmask("+7 (999) 999-99-99").mask(el)
 )
 
@@ -293,3 +296,14 @@ window.onscroll = () => {
   const topButton = document.querySelector('.to-top')
   topButton.style.opacity = window.pageYOffset > 1000? 1 : ''
 }
+
+// Показать больше в блоке "Внимание к деталям"
+const showMoreDetails = (buttonEl,blocksEl) => {
+  const button = document.querySelector(buttonEl)
+  const blocks = Array.prototype.slice.call(document.querySelectorAll(blocksEl))
+  button.onclick = function(){
+    blocks.forEach((e)=> (e.style.display='block'))
+  }
+}
+showMoreDetails('#footer-works','.footer__images a');
+showMoreDetails('#more-works','.works__images a');
