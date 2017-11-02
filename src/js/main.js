@@ -127,6 +127,11 @@ var callBackWrap = () => {
                     <label class="call__field"> * Ваш телефон:</label>
                     <input class="call__input" type="tel" required name="phone" placeholder="+7 (999) 999-99-99" />
                   </div>
+                  <div class="footer__item footer__personal feedback__item_marg">&nbsp; &nbsp; &nbsp; &nbsp;
+                    <label class="confirm__label">
+                        <input type="checkbox" /><span></span></label>
+                    <p>Я принимаю <a class="politics">соглашение сайта</a> об обработке персональных данных</p>
+                  </div>
                   <button class="button call__submit"> Записаться </button>
                 </form>
               </div>
@@ -192,10 +197,16 @@ var showPolitics = function(){
  * Вызов политики конф в футер форме
  */
 var openFooterPolitics = function(){
-  const button = document.querySelector('#politics')
-  button.onclick = function(){
+  const buttons = Array.prototype.slice.call(document.querySelectorAll('.politics'))
+  if(!buttons) return null;
+  buttons.forEach((el) => el.onclick = function(e){
+    e.preventDefault();
     showPolitics();
   }
+  )
+  // button.onclick = function(){
+  //   showPolitics();
+  // }
 }
 openFooterPolitics();
 // popups
