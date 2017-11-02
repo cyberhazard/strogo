@@ -130,7 +130,7 @@ var callBackWrap = () => {
                   <div class="footer__item footer__personal feedback__item_marg">&nbsp; &nbsp; &nbsp; &nbsp;
                     <label class="confirm__label">
                         <input type="checkbox" /><span></span></label>
-                    <p>Я принимаю <a class="politics">соглашение сайта</a> об обработке персональных данных</p>
+                    <p>Я принимаю <a>соглашение сайта</a> об обработке персональных данных</p>
                   </div>
                   <button class="button call__submit"> Записаться </button>
                 </form>
