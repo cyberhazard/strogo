@@ -273,11 +273,11 @@ var modalWrap = ({title,text,photoBig,photoMin1,photoMin2}) => {
               </div>
               <div class="modal__grid">
                 <div class="modal__photo">
-                  <img src=${photoBig} />
+                  <img src="${photoBig}" />
                 </div>
                 <div class="modal__previews">
-                  <img src=${photoMin1}/>
-                  <img src=${photoMin2}/>
+                  <img src="${photoMin1}"/>
+                  <img src="${photoMin2}"/>
                 </div>
               </div>
             </div>
