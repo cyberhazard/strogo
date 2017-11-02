@@ -49,6 +49,8 @@ window.onresize = () => {
 
 // Top slider click to view
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
+// Внимание к деталям лайт галлери
+new lightGallery(document.querySelector('.works__images'), { thumbnail: true });
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true }));
 // Слайдеры в хедере
