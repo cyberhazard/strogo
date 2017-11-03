@@ -66,11 +66,18 @@
     margin-right 1rem
     cursor pointer
     transition 0.3s
+    &:hover
+        background-color transparent
+        color #bb5e36
+        border: 0.2rem solid #bb5e36;
     &_border
       background none
       box-shadow: 1.4rem 1.4rem 2rem rgba(0, 0, 0, 0.15);
       border: 0.2rem solid #bb5e36;
       margin-right 0
+      &:hover
+        background: #bb5e36
+        color white
   &__info
     color: #ffffff;
     font-family: "Open Sans";
@@ -116,10 +123,14 @@
     color: white
     font-size: 2rem
     margin-bottom 1.2rem
+    transition 0.3s
+    &:hover
+      color #bb5e36
   &__call
     display flex
     justify-content: flex-end
     align-items: flex-end
+    transition 0.3s
     &:hover
       & ^[0]__line
         border-color: white
@@ -131,9 +142,14 @@
     padding-right 1rem
     & svg
       width 1.8rem
+      transition 0.3s
   &__line
     border-bottom 1px dashed #D19863
     padding-bottom .6rem
+    transition 0.3s
+    &:hover
+      color white
+      border-bottom 1px dashed white
   &__button
     position relative
     font-family: 'Open Sans'
@@ -143,6 +159,7 @@
     background-color: transparent
     border none
     cursor pointer
+    transition 0.3s
 
 // MEDIA
 
