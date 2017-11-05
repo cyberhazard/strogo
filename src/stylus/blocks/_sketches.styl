@@ -23,11 +23,12 @@
     padding-top 5.6rem
   &__blocks
     display flex
-    height 45rem
+    flex-wrap wrap
     width 100%
     margin-top 3rem
     margin-bottom 2rem
     transition .2s
+    justify-content: space-between
   &__controls
     margin-bottom 2rem
     display flex
@@ -102,10 +103,9 @@
     cursor pointer
 
 .sketch
-  width 45.7rem
-  height 39rem
+  width 22%
+  height 32rem
   flex-shrink: 0
-  margin-right 5rem
   background-color white
   box-shadow: 0 1rem 2.4rem rgba(0,0,0,0.08)
   padding-top 5rem
@@ -113,6 +113,8 @@
   text-align center
   cursor pointer
   will-change: height
+  margin-right 2rem
+  margin-bottom 4rem
   &__label
     font-family: 'Open Sans'
     font-size: 3rem
@@ -138,7 +140,6 @@
     margin-left 0.3rem
     color #C88B52
   &:hover
-    height 45rem
     transition: .5s
     & ^[0]__sketch svg path
       stroke #C88B52
@@ -147,7 +148,7 @@
       transition .5s .2s
   &__sketch
     & svg
-      height 17rem
+      height 10rem
       & path
         transition: .5s
   &__shape svg
@@ -156,32 +157,35 @@
 
 @media (max-width: 1024px)
   .sketches
-    &__blocks
-      height 36rem
+    // &__blocks
+    //   height 36rem
     &__header
       font-size: 2.8rem
     &__handwritten
       padding-top 2rem
   .sketch
-    height 31.9rem
-    width 37.2rem
+    // height 31.9rem
+    // width 37.2rem
+    // &__sketch svg
+    //   height 13rem
+    width 24%
+    margin-right: 0
+    height: 24rem
     &__sketch svg
-      height 13rem
+      height 6rem
     &__shape svg
       margin-top 2.5rem
     &__more
       margin-top 2.5rem
     &__label
-      font-size: 2.4rem
+      font-size: 2rem
     &__text
       font-size: 1.4rem
-    &:hover
-     height 36rem
 
 @media (max-width: 719px)
   .sketches
-    &__blocks
-      height 27rem
+    // &__blocks
+    //   height 27rem
     &__heading
       flex-direction: column
       align-self: flex-end
@@ -198,14 +202,16 @@
       margin: 0 auto;
       overflow: hidden;
   .sketch
-    width 100%
-    height 24.9rem
+    // width 100%
+    // height 24.
+    height 14rem
     padding-top 2rem
-    &:hover
-      height 24.9rem
-      & ^[0]__more
-        display none
+    margin-bottom 1rem
     &__sketch svg
-      height 10.9rem
+      height 3rem
     &__label
       margin-top 1.4rem
+      font-size 1.2rem
+    &__shape svg
+      height: 1.4rem
+      margin-top 2rem
