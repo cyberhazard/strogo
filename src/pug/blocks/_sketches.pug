@@ -4,17 +4,7 @@
       .sketches__handwritten.handwritten Мы тщательно прорабатываем <br /> эскиз для каждой модели
       .sketches__header Эскизы моделей
   span.sketches__wrapper
-    .sketches__blocks
-      include ../data/_sketches.pug
-  .sketches__controls
-    .sketches__button.sketches__button_left
-      .sketches__circle
-        include ../../images/angle.svg
-    .sketches__range
-      .sketches__line
-        .sketches__button.sketches__button_mini
-          .sketches__circle
-      input.sketches__input(type="range" min="0" max="100" step="1" value="0")
-    .sketches__button.sketches__button_right
-      .sketches__circle
-        include ../../images/angle.svg
+    .g-wrapper
+      .sketches__blocks
+        include ../data/_sketches.pug
+
