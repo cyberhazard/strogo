@@ -1,51 +1,51 @@
 // Слайдер с ползунком
-const sketchSlider = (block) => {
-  const input = document.querySelector(block + ' .sketches__input');
-  const circle = document.querySelector(block + ' .sketches__button_mini');
-  const wrapper = document.querySelector(block + ' .sketches__blocks');
-  const left = document.querySelector(block + ' .sketches__button.sketches__button_left');
-  const right = document.querySelector(block + ' .sketches__button.sketches__button_right');
-  const margin = parseInt(getComputedStyle(wrapper.children[0]).marginRight);
-  const offset = wrapper.children[0].clientWidth + margin;
-  const width = wrapper.scrollWidth - offset * Math.floor(window.innerWidth / offset);
-  let currentOffset = 0;
+// const sketchSlider = (block) => {
+//   const input = document.querySelector(block + ' .sketches__input');
+//   const circle = document.querySelector(block + ' .sketches__button_mini');
+//   const wrapper = document.querySelector(block + ' .sketches__blocks');
+//   const left = document.querySelector(block + ' .sketches__button.sketches__button_left');
+//   const right = document.querySelector(block + ' .sketches__button.sketches__button_right');
+//   const margin = parseInt(getComputedStyle(wrapper.children[0]).marginRight);
+//   const offset = wrapper.children[0].clientWidth + margin;
+//   const width = wrapper.scrollWidth - offset * Math.floor(window.innerWidth / offset);
+//   let currentOffset = 0;
 
-  input.onmouseenter = () => circle.style.boxShadow = 'none';
-  input.onmouseleave = () => circle.style.boxShadow = '';
+//   input.onmouseenter = () => circle.style.boxShadow = 'none';
+//   input.onmouseleave = () => circle.style.boxShadow = '';
 
-  input.oninput = () => {
-    circle.style.left = input.value + '%';
-    currentOffset = width / 100 * input.value;
-    wrapper.style.transform = `translateX(-${currentOffset}px)`
-  }
+//   input.oninput = () => {
+//     circle.style.left = input.value + '%';
+//     currentOffset = width / 100 * input.value;
+//     wrapper.style.transform = `translateX(-${currentOffset}px)`
+//   }
 
-  const drawInputs = () => {
-    let proc = currentOffset / width * 100;
-    input.value = proc;
-    circle.style.left = proc + '%';
-    wrapper.style.transform = `translateX(-${currentOffset}px)`
-  }
+//   const drawInputs = () => {
+//     let proc = currentOffset / width * 100;
+//     input.value = proc;
+//     circle.style.left = proc + '%';
+//     wrapper.style.transform = `translateX(-${currentOffset}px)`
+//   }
 
-  left.onclick = () => {
-    if (currentOffset <= offset) currentOffset = 0
-    else currentOffset -= offset;
-    drawInputs();
-  }
+//   left.onclick = () => {
+//     if (currentOffset <= offset) currentOffset = 0
+//     else currentOffset -= offset;
+//     drawInputs();
+//   }
 
-  right.onclick = () => {
-    if (currentOffset >= width - offset ) currentOffset = width + (window.innerWidth < 720? margin : 0)
-    else currentOffset += offset;
-    drawInputs();
-  }
-}
+//   right.onclick = () => {
+//     if (currentOffset >= width - offset ) currentOffset = width + (window.innerWidth < 720? margin : 0)
+//     else currentOffset += offset;
+//     drawInputs();
+//   }
+// }
 
 
-window.onresize = () => {
-  sketchSlider('#sketches');
-  //sketchSlider('#top-slider');
-}
-//['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
-['#sketches'].forEach(id => sketchSlider(id))
+// window.onresize = () => {
+//   sketchSlider('#sketches');
+//   //sketchSlider('#top-slider');
+// }
+// //['#sketches', '#top-slider'].forEach(id => sketchSlider(id))
+// ['#sketches'].forEach(id => sketchSlider(id))
 
 // Top slider click to view
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
