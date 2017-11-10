@@ -341,3 +341,18 @@ const showMoreDetails = (buttonEl,blocksEl) => {
 }
 showMoreDetails('#footer-works','.footer__images a');
 showMoreDetails('#more-works','.works__images a');
+
+// * сортировка блоков Наши работы
+
+const sortJobs = function(){
+  const groups = document.querySelectorAll('.jobs__group')
+  groups.forEach( button => button.onclick = e => {
+    groups.forEach(e=> e.classList.remove('jobs__group_active'))
+    e.target.classList.add('jobs__group_active')
+    const blocks = document.querySelectorAll('.jobs__block');
+    if (e.target.dataset.category == 'all') return blocks.forEach(b => b.style.display = '');
+    blocks.forEach(b => b.style.display = b.dataset.category != e.target.dataset.category? 'none' : '')
+  })
+}
+sortJobs()
+
