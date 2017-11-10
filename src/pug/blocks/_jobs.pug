@@ -11,22 +11,22 @@
         option Все
         option Броги
         option Дерби
-        option Лоуферы
-        option Монки
-        option Оксфорды
+        option Лоферы
+        option Дабл монки
         option Сингл монки
-        option Whole сut
-        option Другое
+        option Оксфорды
+        option Слипперы
+        option Хоулкатс
     .jobs__groups
-      .jobs__group.jobs__group_active Все
-      .jobs__group Броги
-      .jobs__group Дерби
-      .jobs__group Лоуферы
-      .jobs__group Монки
-      .jobs__group Оксфорды
-      .jobs__group Сингл монки
-      .jobs__group Whole сut
-      .jobs__group Другое
+      .jobs__group.jobs__group_active(data-category='all') Все
+      .jobs__group(data-category='brogs') Броги
+      .jobs__group(data-category='derbi') Дерби
+      .jobs__group(data-category='lofers') Лоферы
+      .jobs__group(data-category='double') Дабл монки
+      .jobs__group(data-category='single') Сингл монки
+      .jobs__group(data-category='oxfords') Оксфорды
+      .jobs__group(data-category='slippers') Слипперы
+      .jobs__group(data-category='howlcuts') Хоулкатс
     .jobs__blocks
       mixin jobs(name, price, img, category, type)
         .jobs__block(class=!type? '' : type=='left'? 'jobs__block_left' : 'jobs__block_right' data-category=category)
@@ -40,15 +40,15 @@
           .jobs__label= name
           .jobs__price!= `${price} ${price && '<span>руб.</span>'}`
 
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_1 2', 'all' , 'left')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/lof_1 3', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_2 3', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_3 3', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_4 3', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi_2 5', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_5 3', 'all' , '')
-      +jobs('Brogi Brown Leather', '15 000', '/images/models/ox_1 3', 'all' , 'right')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_1 2', 'brogs' , 'left')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/lof_1 3', 'brogs' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi 4', 'derbi' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_2 3', 'lofers' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_3 3', 'double' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_4 3', 'single' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/derbi_2 5', 'oxfords' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/brogs_5 3', 'slippers' , '')
+      +jobs('Brogi Brown Leather', '15 000', '/images/models/ox_1 3', 'howlcuts' , 'right')
     .jobs__footer
       .button.jobs__button Показать еще
 
