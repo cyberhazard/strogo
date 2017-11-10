@@ -356,3 +356,16 @@ const sortJobs = function(){
 }
 sortJobs()
 
+const sortJobsOpt = function(){
+  const select = document.querySelector('.jobs__oselect').onchange = e => {
+    const blocks = document.querySelectorAll('.jobs__block');
+    const value = e.target.selectedOptions[0].value;
+    const text = e.target.selectedOptions[0].textContent;
+    document.querySelector('.jobs__select').childNodes[0].textContent = text;
+    if (value == 'all') return blocks.forEach(b => b.style.display = '');
+    blocks.forEach(b => b.style.display = b.dataset.category != value? 'none' : '')
+
+  }
+}
+
+  sortJobsOpt()
