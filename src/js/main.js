@@ -64,6 +64,15 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   const addNine = () => templates.splice(0, 9).forEach(el => block.appendChild(el))
   button.onclick = addNine;
   addNine();
+})();
+
+(()=>{
+  const block = document.querySelector('.works__images');
+  const templates = [...document.querySelector('.works__images_template').children];
+  const button = document.querySelector('#more-works');
+  const addNine = () => templates.splice(0, 3).forEach(el => block.appendChild(el))
+  button.onclick = addNine;
+  addNine();
 })()
 
 // Слайдеры в хедере
@@ -343,15 +352,15 @@ window.onscroll = () => {
 }
 
 // Показать больше в блоке "Внимание к деталям"
-const showMoreDetails = (buttonEl,blocksEl) => {
-  const button = document.querySelector(buttonEl)
-  const blocks = Array.prototype.slice.call(document.querySelectorAll(blocksEl))
-  button.onclick = function(){
-    blocks.forEach((e)=> (e.style.display='block'))
-  }
-}
-showMoreDetails('#footer-works','.footer__images a');
-showMoreDetails('#more-works','.works__images a');
+// const showMoreDetails = (buttonEl,blocksEl) => {
+//   const button = document.querySelector(buttonEl)
+//   const blocks = Array.prototype.slice.call(document.querySelectorAll(blocksEl))
+//   button.onclick = function(){
+//     blocks.forEach((e)=> (e.style.display='block'))
+//   }
+// }
+// showMoreDetails('#footer-works','.footer__images a');
+// showMoreDetails('#more-works','.works__images a');
 
 // * сортировка блоков Наши работы
 
