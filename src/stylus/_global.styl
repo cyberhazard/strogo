@@ -80,10 +80,8 @@ html
     height: 100%;
     background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
     background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,.3) 100%);
-    -webkit-transform: skewX(-25deg);
     transform: skewX(-25deg);
-  &:hover::before
-    -webkit-animation: shine .75s;
+  &:hover:before
 	  animation: shine .75s;
 @keyframes shine {
 	100% {
