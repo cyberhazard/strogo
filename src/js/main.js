@@ -50,8 +50,8 @@
 // Top slider click to view
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
 // Внимание к деталям лайт галлери
-new lightGallery(document.querySelector('.works__images'), { thumbnail: false });
-new lightGallery(document.querySelector('.footer__images'), { thumbnail: false });
+new lightGallery(document.querySelector('.works__images_template'), { thumbnail: false });
+new lightGallery(document.querySelector('.footer__images_template'), { thumbnail: false });
 new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: false });
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true, addClass: 'custom-gallery' }));
@@ -70,7 +70,16 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   const block = document.querySelector('.works__images');
   const templates = [...document.querySelector('.works__images_template').children];
   const button = document.querySelector('#more-works');
-  const addNine = () => templates.splice(0, 3).forEach(el => block.appendChild(el))
+  const addNine = () => templates.splice(0, 9).forEach(el => block.appendChild(el))
+  button.onclick = addNine;
+  addNine();
+})();
+
+(()=>{
+  const block = document.querySelector('.footer__images');
+  const templates = [...document.querySelector('.footer__images_template').children];
+  const button = document.querySelector('#footer-works');
+  const addNine = () => templates.splice(0, 9).forEach(el => block.appendChild(el))
   button.onclick = addNine;
   addNine();
 })()
