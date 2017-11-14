@@ -55,6 +55,17 @@ new lightGallery(document.querySelector('.footer__images'), { thumbnail: false }
 new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: false });
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true, addClass: 'custom-gallery' }));
+
+
+(()=>{
+  const block = document.querySelector('.jobs__blocks');
+  const templates = [...document.querySelector('.jobs__blocks_template').children];
+  const button = document.querySelector('.jobs__button');
+  const addNine = () => templates.splice(0, 9).forEach(el => block.appendChild(el))
+  button.onclick = addNine;
+  addNine();
+})()
+
 // Слайдеры в хедере
 var swiper = new Swiper('#header-swiper', {
   slidesPerView: 5,

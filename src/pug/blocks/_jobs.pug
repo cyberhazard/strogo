@@ -28,6 +28,7 @@
       .jobs__group(data-category='slippers') Слипперы
       .jobs__group(data-category='howlcuts') Хоулкатс
     .jobs__blocks
+    .jobs__blocks_template(style="display: none")
       mixin jobs(name, price, img, category, type)
         .jobs__block(class=!type? '' : type=='left'? 'jobs__block_left' : 'jobs__block_right' data-category=category)
           .jobs__image.lg
