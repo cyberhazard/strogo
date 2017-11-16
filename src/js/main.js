@@ -61,9 +61,38 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   const block = document.querySelector('.jobs__blocks');
   const templates = [...document.querySelector('.jobs__blocks_template').children];
   const button = document.querySelector('.jobs__button');
-  const addNine = () => templates.splice(0, 9).forEach(el => block.appendChild(el))
+  let filtered = [...templates];
+  const addNine = () => filtered.splice(0, 9).forEach(el => block.appendChild(el))
   button.onclick = addNine;
   addNine();
+
+  const sortJobs = function(){
+    const groups = document.querySelectorAll('.jobs__group')
+    groups.forEach( button => button.onclick = e => {
+      groups.forEach(e=> e.classList.remove('jobs__group_active'))
+      e.target.classList.add('jobs__group_active')
+      const blocks = document.querySelectorAll('.jobs__block');
+      block.innerHTML = '';
+      if (e.target.dataset.category == 'all') return (filtered = [...templates], addNine());
+      filtered = templates.filter(b => b.dataset.category == e.target.dataset.category);
+      addNine()
+    })
+  }
+  sortJobs()
+
+  const sortJobsOpt = function(){
+    const select = document.querySelector('.jobs__oselect').onchange = e => {
+      const blocks = document.querySelectorAll('.jobs__block');
+      const value = e.target.selectedOptions[0].value;
+      const text = e.target.selectedOptions[0].textContent;
+      document.querySelector('.jobs__select').childNodes[0].textContent = text;
+      block.innerHTML = '';
+      if (value == 'all') return (filtered = [...templates], addNine());
+      filtered = templates.filter(b => b.dataset.category == value);
+      addNine()
+    }
+  }
+  sortJobsOpt()
 })();
 
 (()=>{
@@ -83,6 +112,8 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   button.onclick = addNine;
   addNine();
 })()
+
+
 
 // Слайдеры в хедере
 var swiper = new Swiper('#header-swiper', {
@@ -373,28 +404,3 @@ window.onscroll = () => {
 
 // * сортировка блоков Наши работы
 
-const sortJobs = function(){
-  const groups = document.querySelectorAll('.jobs__group')
-  groups.forEach( button => button.onclick = e => {
-    groups.forEach(e=> e.classList.remove('jobs__group_active'))
-    e.target.classList.add('jobs__group_active')
-    const blocks = document.querySelectorAll('.jobs__block');
-    if (e.target.dataset.category == 'all') return blocks.forEach(b => b.style.display = '');
-    blocks.forEach(b => b.style.display = b.dataset.category != e.target.dataset.category? 'none' : '')
-  })
-}
-sortJobs()
-
-const sortJobsOpt = function(){
-  const select = document.querySelector('.jobs__oselect').onchange = e => {
-    const blocks = document.querySelectorAll('.jobs__block');
-    const value = e.target.selectedOptions[0].value;
-    const text = e.target.selectedOptions[0].textContent;
-    document.querySelector('.jobs__select').childNodes[0].textContent = text;
-    if (value == 'all') return blocks.forEach(b => b.style.display = '');
-    blocks.forEach(b => b.style.display = b.dataset.category != value? 'none' : '')
-
-  }
-}
-
-  sortJobsOpt()
