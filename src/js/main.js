@@ -1,3 +1,20 @@
+(()=>{
+  const preloader = document.querySelector('.preloader');
+  const images = [...document.querySelectorAll('.header__slider img')];
+  // const images = [...document.querySelectorAll('img')];
+  const promises = images.map(image => new Promise((res, rej) => {
+    const img = new Image();
+    img.src = image.src;
+    img.onload = img.onerror = () => res(img)
+  }))
+  Promise.all(promises).then(()=>{
+    preloader.style.opacity = 0;
+    preloader.addEventListener('transitionend', function end(){
+      this.remove();
+    })
+  })
+})()
+
 // Слайдер с ползунком
 // const sketchSlider = (block) => {
 //   const input = document.querySelector(block + ' .sketches__input');
