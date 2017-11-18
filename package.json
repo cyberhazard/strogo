@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "$(npm bin)/gulp & $(npm bin)/browser-sync start -s ./dest -f ./dest",
+    "dev2": "$(npm bin)/gulp & $(npm bin)/browser-sync start -s ./dest",
     "browser": "./node_modules/.bin/browser-sync start -s ./dest -f ./dest",
     "gulp": "node_modules/.bin/gulp"
   },
