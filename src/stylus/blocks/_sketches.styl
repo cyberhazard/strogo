@@ -150,6 +150,8 @@
     & svg
       width 20rem
       height 10rem
+    & svg:nth:child(2)
+      height: 12rem
       & path, & polyline
         transition: .5s
         fill transparent
@@ -157,7 +159,12 @@
   &__shape svg
     height 1.7rem
     margin-top 3.8rem
-
+    &:nth-child(2)
+      margin-top 2rem
+#sketches > span > div > div > div:nth-child(2) > div.sketch__sketch > svg
+  height 12rem
+#sketches > span > div > div > div:nth-child(2) > div.sketch__shape > svg
+  margin-top 2rem
 @media (max-width: 1024px)
   .sketches
     // &__blocks
@@ -174,8 +181,10 @@
     width 24%
     margin-right: 0
     height: 24rem
-    &__sketch svg
-      height 6rem
+    &__sketch
+      & svg
+        width 14rem
+        height 6rem
     &__shape svg
       margin-top 2.5rem
     &__more
@@ -184,6 +193,10 @@
       font-size: 2rem
     &__text
       font-size: 1.4rem
+  #sketches > span > div > div > div:nth-child(2) > div.sketch__sketch > svg
+    height 8rem
+  #sketches > span > div > div > div:nth-child(2) > div.sketch__shape > svg
+    margin-top 0.8rem
 
 @media (max-width: 719px)
   .sketches
@@ -212,9 +225,12 @@
     margin-bottom 1rem
     &__sketch svg
       height 3rem
+      width 5rem
     &__label
       margin-top 1.4rem
       font-size 1.2rem
     &__shape svg
       height: 1.4rem
       margin-top 2rem
+  #sketches > span > div > div > div:nth-child(2) > div.sketch__sketch > svg
+    height 4rem
