@@ -153,15 +153,15 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   addNine();
 })();
 
-(()=>{
-  const block = document.querySelector('.footer__images');
-  const templates = [...document.querySelector('.footer__images_template').children];
-  const button = document.querySelector('#footer-works');
-  const addNine = () => (templates.splice(0, 9).forEach(el => block.appendChild(el)),
-  new lightGallery(document.querySelector('.footer__images'), { thumbnail: false }))
-  button.onclick = addNine;
-  addNine();
-})()
+// (()=>{
+//   const block = document.querySelector('.footer__images');
+//   const templates = [...document.querySelector('.footer__images_template').children];
+//   const button = document.querySelector('#footer-works');
+//   const addNine = () => (templates.splice(0, 9).forEach(el => block.appendChild(el)),
+//   new lightGallery(document.querySelector('.footer__images'), { thumbnail: false }))
+//   button.onclick = addNine;
+//   addNine();
+// })()
 
 
 
