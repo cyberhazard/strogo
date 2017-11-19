@@ -486,7 +486,10 @@ const mobileMenu = () => {
   const close = document.querySelector('.mob-menu__close');
   const menu = document.querySelector('.mob-menu');
   const items = [...document.querySelectorAll('.mob-menu__item')];
-  items.forEach(el => el.onclick = () => menu.style.bottom = '');
+  items.forEach(el => el.onclick = () => {
+    menu.style.bottom = '';
+    body.style.overflow = '';
+  });
   hamburger.onclick = () => {
     menu.style.bottom = 0;
     body.style.overflow = 'hidden';
