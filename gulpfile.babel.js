@@ -5,7 +5,24 @@ import babel from 'gulp-babel';
 import watch from 'gulp-watch';
 import autoprefixer from 'gulp-autoprefixer';
 import cleanCss from 'gulp-clean-css';
-import uglify from 'gulp-uglify'
+import uglify from 'gulp-uglify';
+const imagemin = require('gulp-imagemin');
+
+gulp.task('img', () =>
+  gulp.src('src/images/**/*.*')
+    .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.jpegtran({progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ]))
+    .pipe(gulp.dest('dest/images'))
+);
 
 gulp.task('pug', () => {
   gulp.src('./src/pug/**/!(_)*.pug')
