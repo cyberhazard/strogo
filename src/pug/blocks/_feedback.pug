@@ -2,7 +2,7 @@
   .g-wrapper
     .feedback__content
       .feedback__title Записаться к нам на примерку
-      form.feedback__form
+      form.feedback__form#feedbackform
         .feedback__item
           label.feedback__field * Ваше имя:
           input.feedback__input(type="text" required name="name" placeholder="Например, Антон")
@@ -11,10 +11,10 @@
           input.feedback__input(type="tel" required name="phone" placeholder="+7 (999) 999-99-99")
         .footer__item.footer__personal.feedback__item_marg &nbsp; &nbsp; &nbsp; &nbsp;
           label.confirm__label
-            input(type="checkbox")
+            input#feedback-checkbox(type="checkbox")
             span
           p Я принимаю <a class="politics">соглашение сайта</a> об обработке персональных данных
-        .button.feedback__submit Записаться
+        button.button.feedback__submit(type="submit") Записаться
 
 
 
