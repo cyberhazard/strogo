@@ -102,15 +102,20 @@ new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thum
 // Внимание к деталям лайт галлери
 new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: false });
 
-[...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true, addClass: 'custom-gallery' }));
-
 
 (()=>{
   const block = document.querySelector('.jobs__blocks');
   const templates = [...document.querySelector('.jobs__blocks_template').children];
   const button = document.querySelector('.jobs__button');
   let filtered = [...templates];
-  const addNine = () => filtered.splice(0, 9).forEach(el => block.appendChild(el))
+  const addNine = () => {
+    filtered.splice(0, 9).forEach(el => block.appendChild(el));
+    [...document.querySelectorAll('.jobs__blocks .jobs__image.lg')].forEach(block => {
+      const images = [...block.querySelectorAll('img')];
+      images.forEach(img => img.setAttribute('src', img.dataset.src));
+      new lightGallery(block, { thumbnail: true, addClass: 'custom-gallery' });
+    });
+  }
   button.onclick = addNine;
   addNine();
 

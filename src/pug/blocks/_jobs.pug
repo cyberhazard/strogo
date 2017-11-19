@@ -35,7 +35,7 @@
             - let [folder, qty] = img.split(' ')
             - for(let i = 1 ; i < +qty+1 ; i++)
               a(href=`${folder}/${i}.jpg` style=i>=2? 'display:none;': '')
-                img(src=`${folder}/${i}.jpg` style="width: 100%")
+                img(src="" data-src=`${folder}/${i}.jpg` style="width: 100%")
           .jobs__shape
             include ../../images/shape-hand.svg
           .jobs__label= name
