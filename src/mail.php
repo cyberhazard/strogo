@@ -4,7 +4,7 @@
 
 
 <?php
-$to      = 'zolotukhinwebpr@mail.ru';
+$to      = 'tai.traffic@gmail.com,info@strogo-mtm.ru,andrey.gl.pro@gmail.com';
 $subject = 'Заявка с сайта';
 $mmm = isset($_POST["user-text"])? ' Сообщение: ' . $_POST["user-text"] : '';
 $message = 'Заявка.  Имя: ' . $_POST["user-name"] . ' Телефон: ' . $_POST["user-phone"] . $mmm;
@@ -14,4 +14,3 @@ $headers = 'From: admin@beget.tech' . "\r\n" .
     'X-Mailer: PHP/' . phpversion();
 mail($to, $subject, $message, $headers);
 ?>
-
