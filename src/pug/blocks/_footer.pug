@@ -14,7 +14,7 @@ footer.footer#contacts
           .footer__contact г. Москва, ул. Гончарная, д. 21
       .footer__grid
         .handwritten.footer__handwritten Мы всегда рады принять Вас <br>в нашем уютном шоу-руме
-        form.feedback__form
+        form.feedback__form#footer-forma
           .feedback__item
             label.feedback__field * Ваше имя:
             input.feedback__input(type="text" required name="name" placeholder="Например, Антон")
@@ -23,10 +23,10 @@ footer.footer#contacts
             input.feedback__input(type="tel" required name="phone" placeholder="+7 (999) 999-99-99")
           .footer__item.footer__personal &nbsp; &nbsp; &nbsp; &nbsp;
             label.confirm__label
-              input(type="checkbox")
+              input#footer-checkbox(type="checkbox")
               span
             p Я принимаю <a class="politics">соглашение сайта</a> об обработке персональных данных
-          .button.feedback__submit Отправить
+          .button.feedback__submit#footer-submit(type="submit") Отправить
   .map-wrapper
     .footer__map
       //img(src="./images/map.png").footer__card
