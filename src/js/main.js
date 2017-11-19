@@ -10,22 +10,7 @@ var sendMail = function sendMail(selector) {
   });
 };
 
-/**
- * Отправка заявки футер
- */
-var footerForm = function(){
-  const submit = document.querySelector('#feedback-submit')
-  const checkbox = document.querySelector('#feedback-checkbox')
-  document.querySelector("#feedback__form").onsubmit = function(e){
-    e.preventDefault();
-    if(!checkbox.checked){
-      alertify.error("Вы не приняли соглашение об обработке персональных данных");
-    } else {
-      sendMail('.feedback__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector(".feedback__form").reset()))
-    }
-  }
-}
-footerForm();
+
 
 
 // SVG line width fix
@@ -515,6 +500,7 @@ window.onscroll = () => {
 // showMoreDetails('#more-works','.works__images a');
 
 // * сортировка блоков Наши работы
+
 
 
 
