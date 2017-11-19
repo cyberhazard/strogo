@@ -1,3 +1,33 @@
+/**
+ * Пост запрос формы обратной связи
+ */
+var sendMail = function sendMail(selector) {
+  return fetch('/mail.php', {
+    method: 'POST',
+    body: new FormData(document.querySelector(selector))
+  }).catch(function (error) {
+    alertify.error("Ошибка. Повторите отправку позже");
+  });
+};
+
+/**
+ * Отправка заявки футер
+ */
+var footerForm = function(){
+  const submit = document.querySelector('#feedback-submit')
+  const checkbox = document.querySelector('#feedback-checkbox')
+  document.querySelector("#feedback__form").onsubmit = function(e){
+    e.preventDefault();
+    if(!checkbox.checked){
+      alertify.error("Вы не приняли соглашение об обработке персональных данных");
+    } else {
+      sendMail('.feedback__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector(".feedback__form").reset()))
+    }
+  }
+}
+footerForm();
+
+
 // SVG line width fix
 
 [...document.querySelectorAll('.sketch__sketch svg')]
@@ -213,6 +243,24 @@ var modal = new tingle.modal({
   cssClass: ['custom-class-1', 'custom-class-2']
 });
 
+/**
+ * отправка модалки
+ */
+
+const callBackFormSend = () => {
+  var submit = document.querySelector('#call-submit')
+  var checkbox = document.querySelector('#modal-checkbox')
+  var form = document.querySelector('.call__form');
+  document.querySelector('.call__form').onsubmit = function(e){
+    e.preventDefault();
+    if(!checkbox.checked){
+      alertify.error("Вы не приняли соглашение об обработке персональных данных");
+    } else {
+      sendMail('.call__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector('.call__form').reset(), modal.close()))
+    }
+  }
+};
+
 var callBackWrap = () => {
   return`<div class="call">
             <div class="g-wrapper">
@@ -229,10 +277,10 @@ var callBackWrap = () => {
                   </div>
                   <div class="footer__item footer__personal feedback__item_marg">&nbsp; &nbsp; &nbsp; &nbsp;
                     <label class="confirm__label">
-                        <input type="checkbox" /><span></span></label>
+                        <input type="checkbox" id="modal-checkbox"/><span></span></label>
                     <p>Я принимаю <a>соглашение сайта</a> об обработке персональных данных</p>
                   </div>
-                  <button class="button call__submit"> Записаться </button>
+                  <button type="submit" class="button call__submit" id="call-submit"> Записаться </button>
                 </form>
               </div>
             </div>
@@ -247,14 +295,16 @@ var callBack = function(){
   sewingButton.forEach((el) => el.onclick = function(e){
     e.preventDefault();
     modal.setContent(callBackWrap());
+    callBackFormSend();
     document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
     document.querySelector('.tingle-modal-box').style.background="none";
-    document.querySelector('.call__title').innerHTML = 'Заказать пошив'
+    document.querySelector('.call__title').innerHTML = 'Заказать пошив';
     modal.open();
   })
   callBackButton.forEach((el) => el.onclick = function(e){
     e.preventDefault();
     modal.setContent(callBackWrap());
+    callBackFormSend();
     document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
     document.querySelector('.tingle-modal-box').style.background="none";
     modal.open();
@@ -465,4 +515,6 @@ window.onscroll = () => {
 // showMoreDetails('#more-works','.works__images a');
 
 // * сортировка блоков Наши работы
+
+
 
