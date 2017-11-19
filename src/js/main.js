@@ -452,6 +452,7 @@ var popup = function(){
     sewingButton.onclick = function(e){
       e.preventDefault();
       modal.setContent(callBackWrap());
+      callBackFormSend();
       document.querySelector('.tingle-modal').style.background="rgba(0, 0, 0, .9)";
       document.querySelector('.tingle-modal-box').style.background="none";
       document.querySelector('.call__title').innerHTML = 'Заказать пошив'
@@ -503,4 +504,35 @@ window.onscroll = () => {
 
 
 
+
+/**
+ * Отправка заявки футер
+ */
+var feedBack = function(){
+  const checkbox = document.getElementById('feedback-checkbox')
+  const form = document.getElementById('feedbackform')
+  document.getElementById('feedbackform').onsubmit = function(e){
+    e.preventDefault();
+    if(!checkbox.checked){
+      alertify.error("Вы не приняли соглашение об обработке персональных данных");
+    } else {
+      sendMail("#feedbackform").then(_ => (alertify.success("Ваша заявка отправленна"), document.getElementById('feedbackform').reset()))
+    }
+  }
+}
+feedBack();
+
+var footerForm = function(){
+  const checkbox = document.getElementById('footercheckbox')
+  const form = document.getElementById('footerform')
+  document.getElementById('footerform').onsubmit = function(e){
+    e.preventDefault();
+    if(!checkbox.checked){
+      alertify.error("Вы не приняли соглашение об обработке персональных данных");
+    } else {
+      sendMail("#footerform").then(_ => (alertify.success("Ваша заявка отправленна"), document.getElementById('footerform').reset()))
+    }
+  }
+}
+footerForm();
 
