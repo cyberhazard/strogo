@@ -108,6 +108,7 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   const templates = [...document.querySelector('.works__images_template').children];
   const button = document.querySelector('#more-works');
   const addNine = () => (templates.splice(0, 9).forEach(el => block.appendChild(el)),
+    [...document.querySelectorAll('.works__images img')].forEach(i => i.setAttribute('src', i.getAttribute('data-src'))),
     new lightGallery(document.querySelector('.works__images'), { thumbnail: false }))
   button.onclick = addNine;
   addNine();
