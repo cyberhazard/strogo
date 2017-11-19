@@ -1,3 +1,5 @@
+window.phoneIsValid = false;
+
 /**
  * Пост запрос формы обратной связи
  */
@@ -5,8 +7,11 @@ var sendMail = function sendMail(selector) {
   return fetch('/mail.php', {
     method: 'POST',
     body: new FormData(document.querySelector(selector))
+  }).then(r => {
+    if(r.status != "200") throw Error(r.statusText)
   }).catch(function (error) {
     alertify.error("Ошибка. Повторите отправку позже");
+    throw Error(error)
   });
 };
 
@@ -148,15 +153,15 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   addNine();
 })();
 
-(()=>{
-  const block = document.querySelector('.footer__images');
-  const templates = [...document.querySelector('.footer__images_template').children];
-  const button = document.querySelector('#footer-works');
-  const addNine = () => (templates.splice(0, 9).forEach(el => block.appendChild(el)),
-  new lightGallery(document.querySelector('.footer__images'), { thumbnail: false }))
-  button.onclick = addNine;
-  addNine();
-})()
+// (()=>{
+//   const block = document.querySelector('.footer__images');
+//   const templates = [...document.querySelector('.footer__images_template').children];
+//   const button = document.querySelector('#footer-works');
+//   const addNine = () => (templates.splice(0, 9).forEach(el => block.appendChild(el)),
+//   new lightGallery(document.querySelector('.footer__images'), { thumbnail: false }))
+//   button.onclick = addNine;
+//   addNine();
+// })()
 
 
 
@@ -222,7 +227,10 @@ var modal = new tingle.modal({
   closeLabel: "Close",
   onOpen: function(){
     [...document.querySelectorAll('input[type="tel"]')].forEach(el =>
-      new Inputmask("+7 (999) 999-99-99").mask(el)
+      new Inputmask("+7 (999) 999-99-99", {
+        oncomplete: function() { window.phoneIsValid = true },
+        onincomplete: function() { window.phoneIsValid = false }
+      }).mask(el)
     )
   },
   cssClass: ['custom-class-1', 'custom-class-2']
@@ -238,6 +246,7 @@ const callBackFormSend = () => {
   var form = document.querySelector('.call__form');
   document.querySelector('.call__form').onsubmit = function(e){
     e.preventDefault();
+    if(!window.phoneIsValid) return alertify.error("Введите правильный номер телефона");
     if(!checkbox.checked){
       alertify.error("Вы не приняли соглашение об обработке персональных данных");
     } else {
@@ -479,7 +488,10 @@ mobileMenu();
 
 // Input Masks
 [...document.querySelectorAll('input[type="tel"]')].forEach(el =>
-  new Inputmask("+7 (999) 999-99-99").mask(el)
+  new Inputmask("+7 (999) 999-99-99", {
+    oncomplete: function() { window.phoneIsValid = true },
+    onincomplete: function() { window.phoneIsValid = false }
+  }).mask(el)
 )
 
 // scrollTop button
@@ -513,6 +525,7 @@ var feedBack = function(){
   const form = document.getElementById('feedbackform')
   document.getElementById('feedbackform').onsubmit = function(e){
     e.preventDefault();
+    if(!window.phoneIsValid) return alertify.error("Введите правильный номер телефона");
     if(!checkbox.checked){
       alertify.error("Вы не приняли соглашение об обработке персональных данных");
     } else {
@@ -527,6 +540,7 @@ var footerForm = function(){
   const form = document.getElementById('footerform')
   document.getElementById('footerform').onsubmit = function(e){
     e.preventDefault();
+    if(!window.phoneIsValid) return alertify.error("Введите правильный номер телефона");
     if(!checkbox.checked){
       alertify.error("Вы не приняли соглашение об обработке персональных данных");
     } else {
