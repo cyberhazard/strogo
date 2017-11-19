@@ -80,7 +80,6 @@
 // Top slider click to view
 new lightGallery(document.querySelector('#top-slider .sketches__blocks'), { thumbnail: false });
 // Внимание к деталям лайт галлери
-new lightGallery(document.querySelector('.footer__images_template'), { thumbnail: false });
 new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: false });
 
 [...document.querySelectorAll('.jobs__image.lg')].forEach(block => new lightGallery(block, { thumbnail: true, addClass: 'custom-gallery' }));
@@ -139,7 +138,7 @@ new lightGallery(document.querySelector('.header-swiper-wrapper'), { thumbnail: 
   const templates = [...document.querySelector('.footer__images_template').children];
   const button = document.querySelector('#footer-works');
   const addNine = () => (templates.splice(0, 9).forEach(el => block.appendChild(el)),
-    new lightGallery(document.querySelector('.footer__images'), { thumbnail: false }))
+  new lightGallery(document.querySelector('.footer__images'), { thumbnail: false }))
   button.onclick = addNine;
   addNine();
 })()
