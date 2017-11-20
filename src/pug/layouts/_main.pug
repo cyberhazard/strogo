@@ -10,14 +10,14 @@ html(lang="ru")
     link(rel="stylesheet", href="/vendor/lightgallery.min.css")
     link(rel="stylesheet", href="/vendor/alertify.core.css")
     link(rel="stylesheet", href="/vendor/alertify.default.css")
-    script(src="/vendor/tingle.min.js")
-    script(src="/vendor/swiper.min.js")
-    script(src="/vendor/smooth-scroll.polyfills.min.js")
-    script(src="/vendor/inputmask.dependencyLib.min.js")
-    script(src="/vendor/inputmask.min.js")
-    script(src="/vendor/lightgallery.min.js")
-    script(src="/vendor/alertify.min.js")
-    script(src="/vendor/lg-thumbnail.js")
+    script(src="/vendor/tingle.min.js" defer)
+    script(src="/vendor/swiper.min.js" defer)
+    script(src="/vendor/smooth-scroll.polyfills.min.js" defer)
+    script(src="/vendor/inputmask.dependencyLib.min.js" defer)
+    script(src="/vendor/inputmask.min.js" defer)
+    script(src="/vendor/lightgallery.min.js" defer)
+    script(src="/vendor/alertify.min.js" defer)
+    script(src="/vendor/lg-thumbnail.js" defer)
     title STROGO Handcrafted - индивидуальный пошив мужской обуви на заказ
   body
     include ../blocks/_preloader.pug
@@ -25,4 +25,4 @@ html(lang="ru")
       img(src="/images/to-top2.svg")
     #wrapper
       block content
-    script(src="/js/main.js")
+    script(src="/js/main.js" defer)
