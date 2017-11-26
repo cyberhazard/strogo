@@ -20,14 +20,14 @@ var sendMail = function sendMail(selector) {
 
 // SVG line width fix
 
-[...document.querySelectorAll('.sketch__sketch svg')]
-  .forEach(
-    (svg, i) => [0,1].includes(i)
-      ? [...svg.querySelectorAll('path')].forEach(path=>path.style.strokeWidth = 2)
-      : i==6
-        ? [...svg.querySelectorAll('path')].forEach(path=>path.style.strokeWidth = 2)
-        :''
-  );
+// [...document.querySelectorAll('.sketch__sketch svg')]
+//   .forEach(
+//     (svg, i) => [0,1].includes(i)
+//       ? [...svg.querySelectorAll('path')].forEach(path=>path.style.strokeWidth = 2)
+//       : i==6
+//         ? [...svg.querySelectorAll('path')].forEach(path=>path.style.strokeWidth = 2)
+//         :''
+//   );
 
 
 ///////////////////
