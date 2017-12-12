@@ -523,7 +523,7 @@ var footerForm = function(){
 footerForm();
 
 (()=>{
-  const makeBlock = (name, price, img, category, type) => {
+  const makeBlock = (name, price, img, category, type, video) => {
     const mount = document.querySelector('.jobs__blocks_template');
     let [folder, qty] = img.split(' ');
     const block = document.createElement('div');
@@ -546,13 +546,25 @@ footerForm();
       <div class="jobs__label">${name}</div>
       <div class="jobs__price">${price} ${price && '<span>руб.</span>'}</div>
     `;
-    block.onclick = () => lightGallery(block, {
-      dynamic: true,
-      dynamicEl: Array.from({length: qty}).fill(0).map((_, i) => ({
-        src: `${folder}/${i+1}.jpg`,
-        thumb: `${folder}/${i+1}.jpg`
-      }))
-    });
+    block.onclick = () => {
+      const options = {
+        dynamic: true,
+        dynamicEl: Array.from({length: qty}).fill(0).map((_, i) => ({
+          src: `${folder}/${i+1}.jpg`,
+          thumb: `${folder}/${i+1}.jpg`
+        }))
+      };
+      if (video) options.dynamicEl.push({ src: `/images/video/${video}`, poster: `/images/video/${video}` })
+      lightGallery(block, options);
+      block.addEventListener('onBeforeSlide', e => {
+        const thumbs = [...document.querySelectorAll('.lg-thumb img')];
+        if (thumbs.length > 0) thumbs.forEach(img => img.getAttribute('src') === 'undefined' && img.setAttribute('src', '/images/video.jpg'))
+      });
+      block.addEventListener('onSlideItemLoad', e => {
+        const video = document.querySelector('.lg-video img');
+        if (video) video.outerHTML = video.outerHTML.replace(/(<\/?)img/g, '$1video autoplay loop')
+      });
+    }
     mount.appendChild(block);
   };
 
@@ -561,7 +573,7 @@ footerForm();
   makeBlock('Loafer Brown Tassels', '23 000', '/images/models/lofers_1 3', 'lofers' , '')
   makeBlock('Oxford Brown Painted', '25 000', '/images/models/oxfords_1 3', 'oxfords' , '')
   makeBlock('Belgian Slipper Tassels Black Croco', '20 000', '/images/models/slippers_1 3', 'slippers' , '')
-  makeBlock('Wholecut Brown Calf Suede', '28 000', '/images/models/howlcuts_1 3', 'howlcuts' , '')
+  makeBlock('Wholecut Brown Calf Suede', '28 000', '/images/models/howlcuts_1 3', 'howlcuts' , '', 'test.mp4')
   makeBlock('Single Monk Black Leather', '25 000', '/images/models/single_1 3', 'single' , '')
   makeBlock('Double Monk Calf Black Nav', '25 000', '/images/models/double_1 3', 'double' , '')
   makeBlock('Loafer Mask Navy Painted Calf', '23 000', '/images/models/lofers_18 3', 'lofers' , '')
