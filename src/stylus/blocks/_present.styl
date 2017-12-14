@@ -1,0 +1,118 @@
+.present
+  background url('/images/present-bg.png') center center/cover no-repeat
+  padding 9rem 0 10rem
+  &__header
+    text-align center
+    margin-bottom 6.4rem
+  &__title
+    color: #ffffff;
+    font-family: Geometria;
+    font-size: 5.5rem;
+    font-weight: 700;
+    line-height: 6.7rem;
+    text-transform: uppercase;
+    text-align: center
+    margin-bottom 3.4rem
+  &__costs
+    display: inline-block
+    font-family: "Open Sans";
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.6rem;
+    text-transform: uppercase;
+    color white
+    text-align: center
+    position: relative
+    &:after
+      content ''
+      left: 0
+      bottom -1.4rem
+      position: absolute
+      width 100%
+      height: 0.3rem
+      background #bc5e37;
+  &__items
+    display flex
+    justify-content: space-around
+    align-items: flex-start
+    flex-wrap: wrap
+    margin-bottom 1rem
+  &__item
+    flex-basis: 34%
+    font-family: "Open Sans"
+    font-weight 700
+    font-size 1.7rem
+    color white
+    position: relative
+    padding-left 3.4rem
+    margin-bottom 3rem
+    &:before
+      content: ''
+      left 0
+      top 0.4rem
+      width 1.4rem
+      height 1.4rem
+      background-color: #bc5e37;
+      border-radius: 50%
+      position absolute
+  &__content
+    display flex
+    justify-content: center
+    align-items: center
+  &__form
+    &_footer
+      text-align: center
+  &__button
+    display: block;
+    margin: 0 auto;
+    color: #fffefe;
+    font-family: "Open Sans";
+    font-size: 3.5rem;
+    font-weight: 700;
+    cursor: pointer
+    background: transparent
+    border none
+    position: relative
+    &:after
+      content ''
+      left: 0
+      bottom -0.3rem
+      position: absolute
+      width 100%
+      height: 0.3rem
+      background #bc5e37;
+
+@media (max-width:1024px)
+  .present
+    &__title
+      font-size 3.4rem
+    &__costs
+      font-size 3rem
+    &__item
+      flex-basis 44%
+      font-size: 1.4rem
+    &__button
+      font-size 2.4rem
+@media (max-width:719px)
+  .present
+    padding 5rem 0
+    &__header
+      margin-bottom 4rem
+    &__title
+      padding 0 0.3rem
+      font-size: 2rem;
+      line-height: 3rem;
+      margin-bottom 3rem
+    &__costs
+      font-size 1.6rem
+      &:after
+        bottom -0.4rem
+        height: 0.2rem
+    &__items
+      display block
+      margin-bottom 3.4rem
+    &__item
+      margin-bottom 1.4rem
+      font-size 1.2rem
+    &__button
+      font-size 2rem

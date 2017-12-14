@@ -1,0 +1,21 @@
+.present
+  .present__header
+    .present__title Подарочный сертификат<br>На индивидуальный пошив обуви
+    .present__costs От 20 000 рублей
+  .g-wrapper
+    .present__items
+      .present__item Ручное окрашивание изделий
+      .present__item Производство в испании
+      .present__item Лазерная монограмма на каблуке
+      .present__item Полная персонализация каждой пары
+    .present__content
+      form.present__form
+        .feedback__item
+          label.feedback__field * Ваше имя:
+          input.feedback__input(type="text" required name="name" placeholder="Например, Антон")
+        .feedback__item
+          label.feedback__field * Ваш телефон:
+          input.feedback__input(type="tel" required name="phone" placeholder="+7 (999) 999-99-99")
+        .present__form_footer
+        button.present__button(type="submit") Записаться
+
