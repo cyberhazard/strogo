@@ -15,6 +15,18 @@ var sendMail = function sendMail(selector) {
   });
 };
 
+var sendPresentMail = function sendMail(selector) {
+  return fetch('/mail-present.php', {
+    method: 'POST',
+    body: new FormData(document.querySelector(selector))
+  }).then(r => {
+    if(r.status != "200") throw Error(r.statusText)
+  }).catch(function (error) {
+    alertify.error("Ошибка. Повторите отправку позже");
+    throw Error(error)
+  });
+};
+
 
 
 
@@ -196,6 +208,20 @@ var modal = new tingle.modal({
   },
   cssClass: ['custom-class-1', 'custom-class-2']
 });
+
+/**
+ * Подарочный сертификат
+ */
+
+const presentForm = () => {
+  var form = document.querySelector('.present__form');
+  form.onsubmit = function(e){
+    e.preventDefault();
+    if(!window.phoneIsValid) return alertify.error("Введите правильный номер телефона");
+    sendPresentMail('.call__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector('.present__form').reset(), modal.close()))
+  }
+};
+presentForm();
 
 /**
  * отправка модалки
