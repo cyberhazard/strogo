@@ -1,13 +1,15 @@
 .header
-  background url('/images/bg-header.jpg') center center/cover no-repeat
+  //background url('/images/bg-header.jpg') center center/cover no-repeat
   overflow hidden
-  height 80vh
+  height 100vh
+  z-index 1
+  position: relative
   &__video
     position: absolute
     left 0
     top 0
     width: 100%
-    height: 80vh
+    height: 100%
     z-index: -1
     object-fit: cover
   &__inner
@@ -20,7 +22,7 @@
   &__menu
     flex-grow: 1
   &__content
-    padding-top 7.8rem
+    padding-top 15rem
     padding-bottom 8rem
     display flex
     align-items flex-start
@@ -172,12 +174,16 @@
     cursor pointer
     transition 0.3s
 
-// MEDIA
+@media (max-width: 1440px)
+  .header
+    &__content
+      padding-top 8rem
 
 @media (max-width: 1024px)
   .menu
     display none
   .header
+    height: 80vh
     &__top
       padding-top 1rem
     &__logo svg
