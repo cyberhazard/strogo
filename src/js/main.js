@@ -15,7 +15,8 @@ var sendMail = function sendMail(selector) {
   });
 };
 
-var sendPresentMail = function sendMail(selector) {
+/**
+ var sendPresentMail = function sendMail(selector) {
   return fetch('/mail-present.php', {
     method: 'POST',
     body: new FormData(document.querySelector(selector))
@@ -26,7 +27,7 @@ var sendPresentMail = function sendMail(selector) {
     throw Error(error)
   });
 };
-
+*/
 
 
 
@@ -213,7 +214,7 @@ var modal = new tingle.modal({
  * Подарочный сертификат
  */
 
-const presentForm = () => {
+/**const presentForm = () => {
   var form = document.querySelector('.present__form');
   form.onsubmit = function(e){
     e.preventDefault();
@@ -221,7 +222,7 @@ const presentForm = () => {
     sendPresentMail('.call__form').then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector('.present__form').reset(), modal.close()))
   }
 };
-presentForm();
+presentForm();*/
 
 /**
  * отправка модалки
