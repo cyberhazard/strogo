@@ -16,8 +16,10 @@
   &__groups
     display flex
     justify-content: space-between
-    padding 0 10rem
+    //padding 0 10rem
     margin-bottom 7rem
+    font-weight 600
+    margin 1.2em
   &__group
     font-family: 'Open Sans'
     font-size: 1.8rem
@@ -48,10 +50,9 @@
     padding-left 2rem
     padding-right 2rem
     padding-bottom 4rem
-    margin-bottom 2.4rem
-    margin-right 2.4rem
     width calc(100% / 3 - 2.6rem)
     box-shadow: 0 10px 24px rgba(0,0,0,0.08)
+    margin 1.2em
     &_left:before
       content: ''
       width 38rem
@@ -131,6 +132,27 @@
     right 3rem
     & svg
       height .65rem
+  &__descript
+    color white
+    line-height 3rem
+    font-family Open Sans
+    font-weight 600
+    padding-left 2rem
+    margin-bottom 3.2rem
+    position relative
+    font-size 1.4rem
+    margin-top 2em
+    text-align left
+  &__descript::before {
+    content ""
+    position absolute
+    left 0
+    top 0
+    width .6rem
+    height 100%
+    background-color #d19863
+
+}
 
 // .lg-outer .lg-image
   // max-height: calc(100% - 200px)!important
