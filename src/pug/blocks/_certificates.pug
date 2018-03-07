@@ -1,2 +1,38 @@
 section.sertificates
   .g-wrapper
+    .sertificates__content
+      .sertificates__left
+        .sertificates__title.sertificates__title_mobile Подарочный сертификат на индвидиуальный пошив обуви
+        .sertificates__block.sertificates__block_mobile
+          .works__item.sertificates__item Ручное окрашивание изделий
+          .works__item.sertificates__item Лазерная монограмма на каблуке
+          .works__item.sertificates__item Производство в Испании
+          .works__item.sertificates__item Полная персонализация каждой пары
+        .sertificates__img_wrap
+          img(src="../images/sertificate.png").sertificates__img
+        .sertificates__block.sertificates__block_medium
+          .works__item.sertificates__item Ручное окрашивание изделий
+          .works__item.sertificates__item Лазерная монограмма на каблуке
+          .works__item.sertificates__item Производство в Испании
+          .works__item.sertificates__item Полная персонализация каждой пары
+      .sertificates__right
+        .sertificates__title Подарочный сертификат на индвидиуальный пошив обуви
+        .sertificates__block
+          .works__item.sertificates__item Ручное окрашивание изделий
+          .works__item.sertificates__item Лазерная монограмма на каблуке
+          .works__item.sertificates__item Производство в Испании
+          .works__item.sertificates__item Полная персонализация каждой пары
+        form.sertificates__form
+          .feedback__item.sertificates__form_item
+            label.feedback__field.sertificates__form_field * Ваше имя:
+            input.feedback__input.sertificates__form_input(type="text" required name="name" placeholder="Например, Антон")
+          .feedback__item.sertificates__form_item
+            label.feedback__field.sertificates__form_field * Ваш телефон:
+            input.feedback__input.sertificates__form_input(type="tel" required name="phone" placeholder="+7 (999) 999-99-99")
+          .feedback__item.sertificates__form_item
+            label.feedback__field.sertificates__form_field Кому дарите:
+            input.feedback__input.sertificates__form_input(type="text"  name="for" placeholder="Например, папе")
+          .feedback__item.sertificates__form_item
+            label.feedback__field.sertificates__form_field Сумма подарка:
+            input.feedback__input.sertificates__form_input(type="text"  name="total" placeholder="10 000 Руб.")
+          button.button.feedback__submit(type="submit") Записаться

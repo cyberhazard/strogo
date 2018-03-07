@@ -1,3 +1,93 @@
 .sertificates
   padding 6rem 0
   background url('/images/certif-bg.png') center center/cover no-repeat
+  &__img
+    width: 100%;
+    max-width: 66rem;
+    object-fit: cover;
+  &__content
+    display flex
+    justify-content space-between
+    align-items flex-start
+  &__left
+    width 48%
+  &__right
+    width 48%
+    text-align center
+  &__title
+    color: #ffffff;
+    font-family: Intro;
+    font-size: 2.8rem;
+    font-weight: 400;
+    line-height: 4.2rem;
+    letter-spacing: 0.84px;
+    text-transform uppercase
+    text-align center
+    margin-bottom 2.4rem
+    &_mobile
+      display none
+  &__block
+    margin-bottom 3rem
+    &_medium
+      display none
+    &_mobile
+      display none
+  &__item
+    color white
+    text-align left
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom 1rem
+  &__form
+    &_item
+      width 34.4rem
+      margin 0 auto
+      margin-bottom: 2rem;
+      &:nth-child(4)
+        margin-bottom 4.6rem
+    &_input
+      width 100%
+    &_field
+      margin-bottom 0.6rem
+
+@media (max-width: 1024px)
+  .sertificates
+    &__block
+      display none
+      &_medium
+        display block
+    &__img
+      &_wrap
+        margin-bottom 2rem
+    &__title
+      font-size: 2rem;
+      font-weight: 400;
+      line-height: 3.3rem;
+      letter-spacing: 0.66px;
+      margin-bottom 1.8rem
+    &__form
+      &_item
+        width 100%
+@media (max-width: 719px)
+  .sertificates
+    &__content
+      flex-wrap wrap
+    &__left
+      width 100%
+    &__right
+      width 100%
+    &__title
+      display none
+      &_mobile
+        display block
+    &__block
+      &_medium
+        display none
+      &_mobile
+        display block
+    &__item
+      width 100%
+    &__img
+      max-width 16.3rem
+      &_wrap
+        text-align center
