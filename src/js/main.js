@@ -14,6 +14,17 @@ var sendMail = function sendMail(selector) {
     throw Error(error)
   });
 };
+var sendForSertif = function sendForSertif(selector) {
+  return fetch('/mail-sertificate.php', {
+    method: 'POST',
+    body: new FormData(document.querySelector(selector))
+  }).then(r => {
+    if(r.status != "200") throw Error(r.statusText)
+  }).catch(function (error) {
+    alertify.error("Ошибка. Повторите отправку позже");
+    throw Error(error)
+  });
+};
 
 /**
  var sendPresentMail = function sendMail(selector) {
@@ -533,6 +544,19 @@ var feedBack = function(){
   }
 }
 feedBack();
+
+/**
+ * Отправка заявки на сертификат
+ */
+var sendSertif = function(){
+  const form = document.querySelector('.sertificates__form')
+  document.querySelector('.sertificates__form').onsubmit = function(e){
+    e.preventDefault();
+    if(!window.phoneIsValid) return alertify.error("Введите правильный номер телефона");
+    sendForSertif(".sertificates__form").then(_ => (alertify.success("Ваша заявка отправленна"), document.querySelector('.sertificates__form').reset()))
+  }
+}
+sendSertif();
 
 var footerForm = function(){
   const checkbox = document.getElementById('footercheckbox')
